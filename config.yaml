@@ -1,0 +1,40 @@
+# 通用仿真设置
+simulation:
+  dt: 0.033  # 时间步长 (秒), 约 30 Hz
+  duration_frames: 200 # 仿真总帧数
+  motion_model: "CONSTANT_VELOCITY" # 运动模型选项: CONSTANT_VELOCITY, CONSTANT_ROTATION, CONSTANT_VEL_ROT
+
+# EKF 追踪器参数
+tracker:
+  # 初始状态向量: [x, vx, y, vy, z, vz, yaw, yaw_rate]
+  # 通常将 vx, vy, vz, yaw_rate 初始化为 0
+  initial_state:
+    x: 200.0
+    y: 500.0
+    z: 100.0
+    yaw: 5.0
+
+  # 前视预测时间 (秒), 用于补偿系统延迟
+  lookahead_time: 1 # 例如, 2 * dt
+
+  # 过程噪声 sigmas (标准差)
+  process_noise:
+    sigma_acc_x: 2.0
+    sigma_acc_y: 2.0
+    sigma_acc_z: 1.0
+    sigma_acc_yaw: 0.2
+
+  # 测量噪声 sigmas (标准差)
+  measurement_noise:
+    sigma_meas_x: 5.0
+    sigma_meas_y: 5.0
+    sigma_meas_z: 5.0
+    sigma_meas_yaw: 0.5
+
+# 输出设置
+output:
+  # 所有结果的根目录。可使用绝对或相对路径。
+  base_dir: "result"
+  # 子目录 (将在 base_dir 下创建)
+  csv_subdir: "csv"
+  plot_subdir: "plots"

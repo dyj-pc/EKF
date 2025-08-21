@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/dyj/test_EKF/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
