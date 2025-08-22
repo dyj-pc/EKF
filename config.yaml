@@ -10,16 +10,16 @@ tracker:
   initial_state: [210, 10, 500, 20, 100, 5, 0.5, 0.1]
 
   # 前视预测时间 (秒), 用于补偿系统延迟
-  lookahead_time: 0.5 # 例如, 2 * dt
+  lookahead_time: 0.5
 
-  # 过程噪声: 基于“积分白噪声”模型，这里是连续时间白噪声的谱密度
+  # 过程噪声: 连续时间白噪声的谱密度
   process_noise:
     sigma2_q_x: 5   # x向加速度白噪声的方差 (m/s^2)^2
     sigma2_q_y: 5
     sigma2_q_z: 0.05
     sigma2_q_yaw: 10.0  
   
-  # 测量噪声: R 矩阵的构建参数
+  # 测量噪声 R 矩阵的构建参数
   measurement_noise:
     # R_diag = [r_x * |z_x|, r_y * |z_y|, r_z * |z_z|, r_yaw]
     r_x: 4e-4      # x 测量噪声系数 (与距离成正比)
@@ -30,8 +30,8 @@ tracker:
 
 # 输出设置
 output:
-  # 所有结果的根目录。可使用绝对或相对路径。
+  # 根目录
   base_dir: "result"
-  # 子目录 (将在 base_dir 下创建)
+  # 子目录 
   csv_subdir: "csv"
   plot_subdir: "plots"
