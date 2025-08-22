@@ -1,0 +1,30 @@
+[  1%] Built target auto_aim__cpp
+[  5%] Built target crc_lib
+[ 11%] Built target auto_aim__rosidl_generator_c
+[ 11%] Built target ament_cmake_python_copy_auto_aim
+[ 18%] Built target auto_aim__rosidl_typesupport_cpp
+[ 25%] Built target auto_aim__rosidl_typesupport_fastrtps_cpp
+[ 32%] Built target auto_aim__rosidl_typesupport_introspection_cpp
+[ 38%] Built target auto_aim__rosidl_typesupport_introspection_c
+[ 49%] Built target auto_aim__rosidl_typesupport_c
+[ 52%] Built target auto_aim__rosidl_typesupport_fastrtps_c
+[ 54%] [32mBuilding CXX object CMakeFiles/armor_detector.dir/src/armor_detector/ArmorDetector.cpp.o[0m
+[ 55%] [32mBuilding CXX object CMakeFiles/armor_detector.dir/src/armor_detector/ArmorClassifier.cpp.o[0m
+[ 57%] [32mBuilding CXX object CMakeFiles/armor_detector.dir/src/armor_detector/ArmorSolver.cpp.o[0m
+[ 57%] Built target auto_aim
+[ 61%] Built target com_node
+[ 62%] Built target auto_aim__py
+[ 67%] Built target auto_aim__rosidl_generator_py
+[ 77%] Built target auto_aim__rosidl_typesupport_introspection_c__pyext
+[ 77%] Built target auto_aim__rosidl_typesupport_c__pyext
+[ 77%] Built target auto_aim__rosidl_typesupport_fastrtps_c__pyext
+running egg_info
+writing auto_aim.egg-info/PKG-INFO
+writing dependency_links to auto_aim.egg-info/dependency_links.txt
+writing top-level names to auto_aim.egg-info/top_level.txt
+reading manifest file 'auto_aim.egg-info/SOURCES.txt'
+writing manifest file 'auto_aim.egg-info/SOURCES.txt'
+[ 77%] Built target ament_cmake_python_build_auto_aim_egg
+[ 79%] [32m[1mLinking CXX shared library libarmor_detector.so[0m
+[ 96%] Built target armor_detector
+[ 98%] [32mBuilding CXX object CMakeFiles/armor_detect_node.dir/src/nodes/ArmorDetect_Node.cpp.o[0m

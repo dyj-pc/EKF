@@ -1,0 +1,58 @@
+[0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+[0m
+-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found rclcpp: 16.0.14 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found cv_bridge: 3.2.1 (/opt/ros/humble/share/cv_bridge/cmake)
+-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+-- Configuring done (0.6s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/build/auto_aim
+[  4%] [32mBuilding CXX object CMakeFiles/armor_detector.dir/src/armor_detector/Armor.cpp.o[0m
+[ 14%] [32mBuilding CXX object CMakeFiles/armor_detector.dir/src/armor_detector/ArmorDetector.cpp.o[0m
+[ 14%] [32mBuilding CXX object CMakeFiles/armor_detector.dir/src/armor_detector/LightBarDetector.cpp.o[0m
+[ 23%] [32mBuilding CXX object CMakeFiles/armor_detector.dir/src/armor_detector/ArmorClassifier.cpp.o[0m
+[ 23%] [32mBuilding CXX object CMakeFiles/armor_detector.dir/src/armor_detector/ArmorTracker.cpp.o[0m
+[ 28%] [32mBuilding CXX object CMakeFiles/armor_detector.dir/src/armor_detector/ArmorSolver.cpp.o[0m
+[ 38%] [32mBuilding CXX object CMakeFiles/armor_detector.dir/src/armor_detector/ArmorAngleKalman.cpp.o[0m
+[ 38%] [32mBuilding CXX object CMakeFiles/armor_detector.dir/src/armor_detector/BallisticSolver.cpp.o[0m
+[ 42%] [32mBuilding CXX object CMakeFiles/armor_detector.dir/src/camera/cameraConnect.cpp.o[0m
+[ 47%] [32mBuilding CXX object CMakeFiles/armor_detector.dir/src/test_codes/VideoInput.cpp.o[0m
+[ 52%] [32mBuilding CXX object CMakeFiles/armor_detector.dir/src/test_codes/ImagesInput.cpp.o[0m
+[ 57%] [32mBuilding CXX object CMakeFiles/armor_detector.dir/src/test_codes/PositionPredictor.cpp.o[0m
+[ 61%] [32mBuilding CXX object CMakeFiles/armor_detector.dir/src/test_codes/PredictionTrans.cpp.o[0m
+[ 66%] [32mBuilding CXX object CMakeFiles/armor_detector.dir/src/utils/CRC.cpp.o[0m
+[ 71%] [32mBuilding CXX object CMakeFiles/armor_detector.dir/src/utils/Com.cpp.o[0m
+[ 76%] [32mBuilding CXX object CMakeFiles/armor_detector.dir/src/utils/SharedMemoryTorch.cpp.o[0m
+[ 80%] [32mBuilding CXX object CMakeFiles/armor_detector.dir/src/utils/UnwarpUtils.cpp.o[0m
+[ 85%] [32mBuilding CXX object CMakeFiles/armor_detector.dir/src/utils/FrameRateCounter.cpp.o[0m
+[ 90%] [32m[1mLinking CXX shared library libarmor_detector.so[0m
+lto-wrapper: warning: using serial compilation of 4 LTRANS jobs
+[ 90%] Built target armor_detector
+[ 95%] [32mBuilding CXX object CMakeFiles/armor_detect_node.dir/src/nodes/ArmorDetect_Node.cpp.o[0m
+[100%] [32m[1mLinking CXX executable armor_detect_node[0m
+/usr/bin/ld: /tmp/cchiGvFl.ltrans0.ltrans.o: in function `ArmorDetectNode::processImage()':
+<artificial>:(.text+0x215a): undefined reference to `Tracker::predict()'
+/usr/bin/ld: <artificial>:(.text+0x2231): undefined reference to `Tracker::init(Eigen::Matrix<double, 8, 1, 0, 8, 1> const&)'
+/usr/bin/ld: <artificial>:(.text+0x2294): undefined reference to `Tracker::update(Eigen::Matrix<double, 4, 1, 0, 4, 1> const&)'
+/usr/bin/ld: <artificial>:(.text+0x2334): undefined reference to `Tracker::predictAhead(double) const'
+/usr/bin/ld: /tmp/cchiGvFl.ltrans0.ltrans.o: in function `ArmorDetectNode::ArmorDetectNode()':
+<artificial>:(.text+0x8e5e): undefined reference to `Tracker::Tracker(double, MotionModelType)'
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/armor_detect_node.dir/build.make:1055：armor_detect_node] 错误 1
+gmake[1]: *** [CMakeFiles/Makefile2:188：CMakeFiles/armor_detect_node.dir/all] 错误 2
+gmake: *** [Makefile:146：all] 错误 2

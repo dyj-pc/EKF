@@ -1,0 +1,21 @@
+{
+  "package_name": "auto_aim",
+  "output_dir": "/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/build/auto_aim/rosidl_typesupport_fastrtps_c/auto_aim",
+  "template_dir": "/opt/ros/humble/share/rosidl_typesupport_fastrtps_c/resource",
+  "idl_tuples": [
+    "/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/build/auto_aim/rosidl_adapter/auto_aim:msg/SerialData.idl",
+    "/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/build/auto_aim/rosidl_adapter/auto_aim:msg/GimbalCommand.idl"
+  ],
+  "target_dependencies": [
+    "/opt/ros/humble/lib/rosidl_typesupport_fastrtps_c/rosidl_typesupport_fastrtps_c",
+    "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_typesupport_fastrtps_c/__init__.py",
+    "/opt/ros/humble/share/rosidl_typesupport_fastrtps_c/resource/idl__rosidl_typesupport_fastrtps_c.h.em",
+    "/opt/ros/humble/share/rosidl_typesupport_fastrtps_c/resource/idl__type_support_c.cpp.em",
+    "/opt/ros/humble/share/rosidl_typesupport_fastrtps_c/resource/msg__rosidl_typesupport_fastrtps_c.h.em",
+    "/opt/ros/humble/share/rosidl_typesupport_fastrtps_c/resource/msg__type_support_c.cpp.em",
+    "/opt/ros/humble/share/rosidl_typesupport_fastrtps_c/resource/srv__rosidl_typesupport_fastrtps_c.h.em",
+    "/opt/ros/humble/share/rosidl_typesupport_fastrtps_c/resource/srv__type_support_c.cpp.em",
+    "/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/build/auto_aim/rosidl_adapter/auto_aim/msg/SerialData.idl",
+    "/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/build/auto_aim/rosidl_adapter/auto_aim/msg/GimbalCommand.idl"
+  ]
+}

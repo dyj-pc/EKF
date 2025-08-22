@@ -1,0 +1,4 @@
+msg/GimbalCommand.idl
+msg/GimbalCommand.msg
+msg/SerialData.idl
+msg/SerialData.msg

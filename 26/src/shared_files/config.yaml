@@ -1,0 +1,120 @@
+# EKF 过程噪声参数（连续时间加速度标准差）
+sigma2_q_x: 1000   # x向加速度白噪声的方差 (m/s^2)^2
+sigma2_q_y: 0.05
+sigma2_q_z: 0.05
+sigma2_q_yaw: 50.0  
+
+r_x: 4e-4      # x 测量噪声系数 (与距离成正比)
+r_y: 4e-4
+r_z: 9e-4
+r_yaw: 5e-3
+
+# SharedMemoryTorch参数
+SHM_KEY : 0x1234
+
+# ArmorDetect_Node 参数
+model_relative_path : "src/shared_files/models/model_rm2026.pt"
+enemy_color : "BLUE"
+RESET_DISTANCE_THRESHOLD : 400.0 # 单位：mm
+MAX_LOST_TIME : 0.5              # 单位：秒
+camera_ExposureTime : 2000.0  # 5000.0
+camera_Gain : 16.0            # 16.0
+bullet_velocity_ : 15.0
+current_pitch_ : 0.0
+current_yaw_ : 0.0
+delta_x_ : 0.0 #    0.0f     48.72f
+delta_y_ : 42.8 #   78.31f   -29.14f
+delta_z_ : 142.5 #  181.30f  114.34f
+
+pc_ip : "192.168.10.25"
+cam_ip : "192.168.10.10"
+
+video_relative_path : "InputVideo/robosoul.mp4" # 使用视频输入时的视频路径
+images_relative_path : "InputImages" # 使用图片输入时的图片文件夹路径
+
+frame_rate : 30.0
+
+yaw_rad_to_x_pixel_ratio : 1300.0
+pitch_rad_to_y_pixel_ratio : 1350.0
+
+reset_com_frame : 10
+
+# Params.h 参数设置
+min_light_height : 8 # 8
+light_slope_offset : 30
+light_min_area : 3 # 10
+max_light_wh_ratio : 100.0 # 10.0
+min_light_wh_ratio : 0.1 # 0.1
+light_max_tilt_angle : 60.0
+min_light_delta_x : 28
+min_light_dx_ratio : 0.8
+max_light_dy_ratio : 1.0
+max_light_delta_angle : 30.0
+near_face_v : 600
+max_lr_rate : 0.7
+max_wh_ratio : 6.0
+min_wh_ratio : 0.5
+small_armor_wh_threshold : 3.6
+bin_cls_thres : 166
+target_max_angle : 20
+goodToTotalRatio : 1.0
+matchDistThre : 50
+wh_ratio_threshold : 3.2
+wh_ratio_max : 4.5
+M_YAW_THRES : 31416     # 5 degrees in radians (approx)
+K_YAW_THRES : 0.7
+MAX_DETECT_CNT : 2
+MAX_LOST_CNT : 3
+
+# LightBarDetector 参数
+binary_img_THRESHOLD : 240 # 128 # 180
+color_rect_expand_FACTOR : 1.5
+mean_color_diff_THRESHOLD_BLUE : 15.0
+mean_color_diff_THRESHOLD_RED : 5.0
+THRES_MAX_COLOR_RED : 60
+THRES_MAX_COLOR_BLUE : 100
+
+# ArmorDetector 参数
+corners_expand_ratio : 1.5 # 装甲板角点坐标扩大比例
+height_correct_ratio_small : 1.02 # 角点坐标修正比例系数
+width_correct_ratio_small : 1.12
+height_correct_ratio_large : 1.04
+width_correct_ratio_large : 1.06
+max_angle_diff : 22.5        # 最大角度差 # 22.5 # 30
+max_height_diff_ratio : 0.65  # 最大高度差比例 # 0.65 # 1.2
+max_length_direction_mismatch_ratio : 1.5 # 最大长度方向错位比例 # 2.0
+min_light_distance : 5.0     # 最小灯条距离 
+max_light_distance : 50.0    # 最大灯条距离
+min_armor_confidence : 0.3   # 最小置信度阈值 # 0.3
+#camera_matrix: # 相机内参矩阵
+#  - [810.40948926, 0.00000000e+00, 611.41991188]
+#  - [0.00000000e+00, 813.22312056, 385.16020552]
+#  - [0.00000000e+00, 0.00000000e+00, 1.00000000e+00]
+#dist_coeffs: [-0.08153923,  0.49331671,  0.0017929,  -0.00437156, -1.28439103] # 畸变系数
+camera_matrix: # 相机内参矩阵
+  - [1.31280460e+03, 0.00000000e+00, 6.38736364e+02]
+  - [0.00000000e+00, 1.31309593e+03, 5.34133502e+02]
+  - [0.00000000e+00, 0.00000000e+00, 1.00000000e+00]
+dist_coeffs: [-0.05392145, -0.02516686, -0.00222499, -0.00149047,  0.43693918] # 畸变系数
+max_expected_small_distance_mismatch_ratio : 0.35
+max_expected_large_distance_mismatch_ratio : 0.35
+
+# ArmorClassifier 参数
+MAX_ROI_SAVE_COUNT : 20000  # 最大保存数量
+classify_classes : 8
+IS_ARMOR_THRESHOLD : 0.5
+IS_LARGE_THRESHOLD : 0.5
+NOT_SCREEN_THRESHOLD : 0.5
+NOT_SLANT_THRESHOLD : 0.5
+CLASSIFY_THRESHOLD : 0.5
+INPUT_HEIGHT : 48
+INPUT_WIDTH : 64
+MAX_TRACKING_AGE_MS : 300  # 最大跟踪时间100ms // DEBUG // 100
+MIN_TRACKING_COUNT : 2     # 最小连续跟踪次数           // 2
+IS_NEAR_MAX_DIST_RATIO : 1.5     # 50.0
+fit_step : 5
+predict_step : 5
+fourier_fit_step : 60
+fourier_fit_order : 5
+fourier_predict_step : 30
+MAX_FOURIER_TRACKING_AGE_MS : 1000

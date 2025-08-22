@@ -1,0 +1,7 @@
+{
+  "package_name": "auto_aim",
+  "non_idl_tuples": [
+    "/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/src/auto_aim:msg/SerialData.msg",
+    "/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/src/auto_aim:msg/GimbalCommand.msg"
+  ]
+}

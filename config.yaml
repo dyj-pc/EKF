@@ -1,7 +1,7 @@
 # 通用仿真设置
 simulation:
   dt: 0.033  # 时间步长 (秒), 约 30 Hz
-  duration_frames: 200 # 仿真总帧数
+  duration_frames: 400 # 仿真总帧数
   motion_model: "CONSTANT_VELOCITY" # 运动模型选项: CONSTANT_VELOCITY, CONSTANT_ROTATION, CONSTANT_VEL_ROT
 
 # EKF 追踪器参数
@@ -10,22 +10,22 @@ tracker:
   initial_state: [210, 10, 500, 20, 100, 5, 0.5, 0.1]
 
   # 前视预测时间 (秒), 用于补偿系统延迟
-  lookahead_time: 0.5
+  lookahead_time: 0.4
 
   # 过程噪声: 连续时间白噪声的谱密度
   process_noise:
-    sigma2_q_x: 5   # x向加速度白噪声的方差 (m/s^2)^2
+    sigma2_q_x: 10000   # x向加速度白噪声的方差 (m/s^2)^2
     sigma2_q_y: 5
     sigma2_q_z: 0.05
-    sigma2_q_yaw: 10.0  
+    sigma2_q_yaw: 50.0  
   
   # 测量噪声 R 矩阵的构建参数
   measurement_noise:
     # R_diag = [r_x * |z_x|, r_y * |z_y|, r_z * |z_z|, r_yaw]
-    r_x: 4e-4      # x 测量噪声系数 (与距离成正比)
+    r_x: 4e-12      # x 测量噪声系数 (与距离成正比)
     r_y: 4e-4
     r_z: 9e-4
-    r_yaw: 5e-5   # yaw 测量噪声的固定方差 (rad^2)
+    r_yaw: 5e-3   # yaw 测量噪声的固定方差 (rad^2)
 
 
 # 输出设置

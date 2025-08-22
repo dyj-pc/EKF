@@ -18,8 +18,8 @@ namespace plt = matplotlibcpp;
 
 // 生成理想轨迹（用于仿真测量的真值基准）
 void simulate_motion(double t, Eigen::Vector4d& z) {
-    double x = 200 + 10 * t + 5 * sin(1 * t) + 8 * cos(0.2 * t);                // 真值 x，添加正弦和余弦项以增加复杂性
-    double y = 500 + 20 * t - 2 * t * t + 10 * sin(0.5 * t);                 // 真值 y
+    double x = 200 + 10 * t + 10 * sin(1 * t) + 8 * cos(2 * t);                // 真值 x，添加正弦和余弦项以增加复杂性
+    double y = 500 + 20 * t - 2 * t * t ;//+ 10 * sin(0.5 * t);                 // 真值 y
     double z_pos = 100 + 0.5 * t * t + 4 * cos(0.15 * t) + 15 * sin(0.3 * t);   // 真值 z
     double yaw = 0.5 + 0.1 * t + 0.2 * sin(0.5 * t);                         // 真值 yaw
 

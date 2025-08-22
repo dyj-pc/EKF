@@ -1,0 +1,54 @@
+[0.014s] Invoking command in '/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/build/auto_aim': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/build/auto_aim -- -j12 -l12
+[0.067s] [  1%] Built target auto_aim__cpp
+[0.068s] [  5%] Built target crc_lib
+[0.071s] [ 11%] Built target auto_aim__rosidl_generator_c
+[0.074s] [ 11%] Built target ament_cmake_python_copy_auto_aim
+[0.083s] [ 18%] Built target auto_aim__rosidl_typesupport_cpp
+[0.084s] [ 25%] Built target auto_aim__rosidl_typesupport_fastrtps_cpp
+[0.085s] [ 32%] Built target auto_aim__rosidl_typesupport_introspection_cpp
+[0.085s] [ 38%] Built target auto_aim__rosidl_typesupport_introspection_c
+[0.086s] [ 49%] Built target auto_aim__rosidl_typesupport_c
+[0.086s] [ 52%] Built target auto_aim__rosidl_typesupport_fastrtps_c
+[0.090s] [ 54%] [32mBuilding CXX object CMakeFiles/armor_detector.dir/src/armor_detector/ArmorDetector.cpp.o[0m
+[0.090s] [ 55%] [32mBuilding CXX object CMakeFiles/armor_detector.dir/src/armor_detector/ArmorClassifier.cpp.o[0m
+[0.092s] [ 57%] [32mBuilding CXX object CMakeFiles/armor_detector.dir/src/armor_detector/ArmorSolver.cpp.o[0m
+[0.097s] [ 57%] Built target auto_aim
+[0.104s] [ 61%] Built target com_node
+[0.110s] [ 62%] Built target auto_aim__py
+[0.125s] [ 67%] Built target auto_aim__rosidl_generator_py
+[0.140s] [ 77%] Built target auto_aim__rosidl_typesupport_introspection_c__pyext
+[0.140s] [ 77%] Built target auto_aim__rosidl_typesupport_c__pyext
+[0.140s] [ 77%] Built target auto_aim__rosidl_typesupport_fastrtps_c__pyext
+[0.279s] running egg_info
+[0.280s] writing auto_aim.egg-info/PKG-INFO
+[0.280s] writing dependency_links to auto_aim.egg-info/dependency_links.txt
+[0.280s] writing top-level names to auto_aim.egg-info/top_level.txt
+[0.283s] reading manifest file 'auto_aim.egg-info/SOURCES.txt'
+[0.285s] writing manifest file 'auto_aim.egg-info/SOURCES.txt'
+[0.317s] [ 77%] Built target ament_cmake_python_build_auto_aim_egg
+[4.989s] [ 79%] [32m[1mLinking CXX shared library libarmor_detector.so[0m
+[5.325s] lto-wrapper: warning: using serial compilation of 3 LTRANS jobs
+[8.044s] [ 96%] Built target armor_detector
+[8.069s] [ 98%] [32mBuilding CXX object CMakeFiles/armor_detect_node.dir/src/nodes/ArmorDetect_Node.cpp.o[0m
+[11.256s] In file included from [01m[K/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/src/auto_aim/include/armor_detector/motion_model.hpp:7[m[K,
+[11.256s]                  from [01m[K/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/src/auto_aim/include/armor_detector/Tracker.h:2[m[K,
+[11.256s]                  from [01m[K/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/src/auto_aim/src/nodes/ArmorDetect_Node.cpp:11[m[K:
+[11.256s] [01m[K/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/src/auto_aim/include/armor_detector/extended_kalman_filter.hpp:[m[K In member function ‘[01m[KExtendedKalmanFilter<N_x, N_z, PredicFunc, MeasureFunc>::MatrixX1 ExtendedKalmanFilter<N_x, N_z, PredicFunc, MeasureFunc>::predict()[m[K’:
+[11.256s] [01m[K/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/src/auto_aim/include/armor_detector/extended_kalman_filter.hpp:72:29:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K)[m[K’ token
+[11.256s]    72 |       F.block<i, 0, 1, N_x>([01;31m[K)[m[K = x_p_jet[i].v.transpose(); // 计算过程模型的雅可比矩阵
+[11.256s]       |                             [01;31m[K^[m[K
+[11.256s] [01m[K/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/src/auto_aim/include/armor_detector/extended_kalman_filter.hpp:[m[K In member function ‘[01m[KExtendedKalmanFilter<N_x, N_z, PredicFunc, MeasureFunc>::MatrixX1 ExtendedKalmanFilter<N_x, N_z, PredicFunc, MeasureFunc>::update(const MatrixZ1&)[m[K’:
+[11.256s] [01m[K/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/src/auto_aim/include/armor_detector/extended_kalman_filter.hpp:96:29:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K)[m[K’ token
+[11.256s]    96 |       H.block<i, 0, 1, N_x>([01;31m[K)[m[K = z_p_jet[i].v.transpose();
+[11.256s]       |                             [01;31m[K^[m[K
+[11.483s] [01m[K/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/src/auto_aim/src/nodes/ArmorDetect_Node.cpp:[m[K In member function ‘[01m[Kvoid ArmorDetectNode::processImage()[m[K’:
+[11.483s] [01m[K/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/src/auto_aim/src/nodes/ArmorDetect_Node.cpp:381:30:[m[K [01;31m[Kerror: [m[K‘[01m[Kangle_kalman_[m[K’ was not declared in this scope
+[11.483s]   381 |                         if (![01;31m[Kangle_kalman_[m[K->isInitialized()) {
+[11.483s]       |                              [01;31m[K^~~~~~~~~~~~~[m[K
+[11.501s] [01m[K/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/src/auto_aim/src/nodes/ArmorDetect_Node.cpp:384:61:[m[K [01;31m[Kerror: [m[K‘[01m[Kangle_kalman_[m[K’ was not declared in this scope
+[11.501s]   384 |                         cv::Point3f current_predicted_pos = [01;31m[Kangle_kalman_[m[K->predictKalmanFilter(0);
+[11.501s]       |                                                             [01;31m[K^~~~~~~~~~~~~[m[K
+[13.890s] gmake[2]: *** [CMakeFiles/armor_detect_node.dir/build.make:79：CMakeFiles/armor_detect_node.dir/src/nodes/ArmorDetect_Node.cpp.o] 错误 1
+[13.890s] gmake[1]: *** [CMakeFiles/Makefile2:803：CMakeFiles/armor_detect_node.dir/all] 错误 2
+[13.890s] gmake: *** [Makefile:146：all] 错误 2
+[13.892s] Invoked command in '/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/build/auto_aim' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/build/auto_aim -- -j12 -l12

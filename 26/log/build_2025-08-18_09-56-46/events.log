@@ -1,0 +1,596 @@
+[0.000000] (-) TimerEvent: {}
+[0.000102] (auto_aim) JobQueued: {'identifier': 'auto_aim', 'dependencies': OrderedDict()}
+[0.000118] (shm_pytorch_processor_pkg) JobQueued: {'identifier': 'shm_pytorch_processor_pkg', 'dependencies': OrderedDict()}
+[0.000614] (auto_aim) JobStarted: {'identifier': 'auto_aim'}
+[0.004019] (shm_pytorch_processor_pkg) JobStarted: {'identifier': 'shm_pytorch_processor_pkg'}
+[0.008670] (auto_aim) JobProgress: {'identifier': 'auto_aim', 'progress': 'cmake'}
+[0.009039] (auto_aim) Command: {'cmd': ['/usr/bin/cmake', '/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/src/auto_aim', '-DCMAKE_INSTALL_PREFIX=/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim'], 'cwd': '/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/build/auto_aim', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('HTTPS_PROXY', 'http://127.0.0.1:7897/'), ('no_proxy', 'localhost,127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,172.29.0.0/16,::1'), ('LANGUAGE', 'zh_CN'), ('USER', 'dyj'), ('LC_TIME', 'zh_CN.UTF-8'), ('all_proxy', 'socks://127.0.0.1:7897/'), ('XDG_SESSION_TYPE', 'x11'), ('ALLUSERSPROFILE', '/opt/MVS/MVFG'), ('SHLVL', '1'), ('LIBGL_ALWAYS_SOFTWARE', '1'), ('LD_LIBRARY_PATH', '/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/local/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32::/usr/local/cuda-11.8/lib64'), ('HOME', '/home/dyj'), ('CONDA_SHLVL', '0'), ('DESKTOP_SESSION', 'ubuntu'), ('NO_PROXY', 'localhost,127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,172.29.0.0/16,::1'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('XDG_SEAT_PATH', '/org/freedesktop/DisplayManager/Seat0'), ('IGN_RENDER_ENGINE', 'ogre'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1623'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2ad0ab8d910a8989ee1f39ac68a2781e'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('CPLUS_INCLUDE_PATH', '/usr/local/include/opencv4:'), ('IM_CONFIG_PHASE', '1'), ('https_proxy', 'http://127.0.0.1:7897/'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'fcitx'), ('LOGNAME', 'dyj'), ('ALL_PROXY', 'socks://127.0.0.1:7897/'), ('http_proxy', 'http://127.0.0.1:7897/'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/usr/local/lib/pkgconfig:'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', '/home/dyj/.gazebo/models'), ('LIBGL_ALWAYS_INDIRECT', '1'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('MVCAM_SDK_PATH', '/opt/MVS'), ('PATH', '/opt/ros/humble/bin:/usr/local/cuda-12.4/bin:/home/dyj/miniconda3/condabin:/home/dyj/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/cuda-11.8/bin'), ('SESSION_MANAGER', 'local/dyj:@/tmp/.ICE-unix/1623,unix/dyj:/tmp/.ICE-unix/1623'), ('GDM_LANG', 'zh_CN'), ('MVCAM_GENICAM_CLPROTOCOL', '/opt/MVS/lib/CLProtocol'), ('XDG_SESSION_PATH', '/org/freedesktop/DisplayManager/Session0'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/850e0a83_318a_471e_acbe_5970c769e788'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=fcitx'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/home/dyj/.Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.182'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('XDG_GREETER_DATA_DIR', '/var/lib/lightdm-data/dyj'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/dyj/miniconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('Torch_DIR', '/home/dyj/libtorch/share/cmake/Torch'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('QT_IM_MODULE', 'fcitx'), ('PWD', '/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/build/auto_aim'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/dyj/miniconda3/bin/conda'), ('CLUTTER_IM_MODULE', 'fcitx'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2ad0ab8d910a8989ee1f39ac68a2781e'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('HTTP_PROXY', 'http://127.0.0.1:7897/'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/dyj/libtorch/share/cmake/Torch::/opt/ros/humble'), ('MVCAM_COMMON_RUNENV', '/opt/MVS/lib')]), 'shell': False}
+[0.016732] (auto_aim) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):\n'}
+[0.016873] (auto_aim) StderrLine: {'line': b'  Compatibility with CMake < 3.10 will be removed from a future version of\n'}
+[0.016928] (auto_aim) StderrLine: {'line': b'  CMake.\n'}
+[0.016977] (auto_aim) StderrLine: {'line': b'\n'}
+[0.017021] (auto_aim) StderrLine: {'line': b'  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax\n'}
+[0.017058] (auto_aim) StderrLine: {'line': b'  to tell CMake that the project requires at least <min> but has been updated\n'}
+[0.017084] (auto_aim) StderrLine: {'line': b'  to work with policies introduced by <max> or earlier.\n'}
+[0.017110] (auto_aim) StderrLine: {'line': b'\n'}
+[0.017134] (auto_aim) StderrLine: {'line': b'\x1b[0m\n'}
+[0.063722] (auto_aim) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.099835] (-) TimerEvent: {}
+[0.119934] (auto_aim) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.128720] (auto_aim) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.179668] (auto_aim) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.190534] (auto_aim) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.191220] (auto_aim) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.191990] (auto_aim) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.199962] (-) TimerEvent: {}
+[0.202304] (auto_aim) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.257413] (auto_aim) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.268904] (auto_aim) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.269243] (auto_aim) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.269481] (auto_aim) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.278084] (auto_aim) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.300121] (-) TimerEvent: {}
+[0.376956] (auto_aim) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter\n'}
+[0.400212] (-) TimerEvent: {}
+[0.450373] (auto_aim) StdoutLine: {'line': b'-- Found rclcpp: 16.0.14 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.457616] (shm_pytorch_processor_pkg) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/shm_pytorch_processor_pkg', 'build', '--build-base', '/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/build/shm_pytorch_processor_pkg/build', 'install', '--record', '/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/build/shm_pytorch_processor_pkg/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/src/shm_pytorch_processor_pkg', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'HTTPS_PROXY': 'http://127.0.0.1:7897/', 'no_proxy': 'localhost,127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,172.29.0.0/16,::1', 'LANGUAGE': 'zh_CN', 'USER': 'dyj', 'LC_TIME': 'zh_CN.UTF-8', 'all_proxy': 'socks://127.0.0.1:7897/', 'XDG_SESSION_TYPE': 'x11', 'ALLUSERSPROFILE': '/opt/MVS/MVFG', 'SHLVL': '1', 'LIBGL_ALWAYS_SOFTWARE': '1', 'LD_LIBRARY_PATH': '/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/local/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32::/usr/local/cuda-11.8/lib64', 'HOME': '/home/dyj', 'CONDA_SHLVL': '0', 'DESKTOP_SESSION': 'ubuntu', 'NO_PROXY': 'localhost,127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,172.29.0.0/16,::1', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'XDG_SEAT_PATH': '/org/freedesktop/DisplayManager/Seat0', 'IGN_RENDER_ENGINE': 'ogre', 'LC_MONETARY': 'zh_CN.UTF-8', 'DBUS_STARTER_BUS_TYPE': 'session', 'SYSTEMD_EXEC_PID': '1623', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus,guid=2ad0ab8d910a8989ee1f39ac68a2781e', 'COLORTERM': 'truecolor', '_CE_M': '', 'CPLUS_INCLUDE_PATH': '/usr/local/include/opencv4:', 'IM_CONFIG_PHASE': '1', 'https_proxy': 'http://127.0.0.1:7897/', 'ROS_DISTRO': 'humble', 'GTK_IM_MODULE': 'fcitx', 'LOGNAME': 'dyj', 'ALL_PROXY': 'socks://127.0.0.1:7897/', 'http_proxy': 'http://127.0.0.1:7897/', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'PKG_CONFIG_PATH': '/usr/local/lib/pkgconfig:', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'GAZEBO_MODEL_PATH': '/home/dyj/.gazebo/models', 'LIBGL_ALWAYS_INDIRECT': '1', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'ROS_LOCALHOST_ONLY': '0', 'MVCAM_SDK_PATH': '/opt/MVS', 'PATH': '/opt/ros/humble/bin:/usr/local/cuda-12.4/bin:/home/dyj/miniconda3/condabin:/home/dyj/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/cuda-11.8/bin', 'SESSION_MANAGER': 'local/dyj:@/tmp/.ICE-unix/1623,unix/dyj:/tmp/.ICE-unix/1623', 'GDM_LANG': 'zh_CN', 'MVCAM_GENICAM_CLPROTOCOL': '/opt/MVS/lib/CLProtocol', 'XDG_SESSION_PATH': '/org/freedesktop/DisplayManager/Session0', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'zh_CN.UTF-8', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/850e0a83_318a_471e_acbe_5970c769e788', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'zh_CN.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'zh_CN.UTF-8', 'XMODIFIERS': '@im=fcitx', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/home/dyj/.Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.182', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'XDG_GREETER_DATA_DIR': '/var/lib/lightdm-data/dyj', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'CONDA_PYTHON_EXE': '/home/dyj/miniconda3/bin/python', 'SHELL': '/bin/bash', 'LC_NAME': 'zh_CN.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'Torch_DIR': '/home/dyj/libtorch/share/cmake/Torch', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'zh_CN.UTF-8', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'LC_IDENTIFICATION': 'zh_CN.UTF-8', 'QT_IM_MODULE': 'fcitx', 'PWD': '/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/build/shm_pytorch_processor_pkg', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/dyj/miniconda3/bin/conda', 'CLUTTER_IM_MODULE': 'fcitx', 'DBUS_STARTER_ADDRESS': 'unix:path=/run/user/1000/bus,guid=2ad0ab8d910a8989ee1f39ac68a2781e', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/build/shm_pytorch_processor_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/shm_pytorch_processor_pkg/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'HTTP_PROXY': 'http://127.0.0.1:7897/', 'LC_NUMERIC': 'zh_CN.UTF-8', 'LC_PAPER': 'zh_CN.UTF-8', 'COLCON': '1', 'VTE_VERSION': '6800', 'CMAKE_PREFIX_PATH': '/home/dyj/libtorch/share/cmake/Torch:', 'MVCAM_COMMON_RUNENV': '/opt/MVS/lib'}, 'shell': False}
+[0.488144] (auto_aim) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.492882] (auto_aim) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.499995] (auto_aim) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.500266] (-) TimerEvent: {}
+[0.510711] (auto_aim) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.523014] (auto_aim) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.560385] (auto_aim) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.563834] (auto_aim) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.600372] (-) TimerEvent: {}
+[0.614899] (shm_pytorch_processor_pkg) StdoutLine: {'line': b'running egg_info\n'}
+[0.615218] (shm_pytorch_processor_pkg) StdoutLine: {'line': b'creating ../../build/shm_pytorch_processor_pkg/shm_pytorch_processor_pkg.egg-info\n'}
+[0.615378] (shm_pytorch_processor_pkg) StdoutLine: {'line': b'writing ../../build/shm_pytorch_processor_pkg/shm_pytorch_processor_pkg.egg-info/PKG-INFO\n'}
+[0.615476] (shm_pytorch_processor_pkg) StdoutLine: {'line': b'writing dependency_links to ../../build/shm_pytorch_processor_pkg/shm_pytorch_processor_pkg.egg-info/dependency_links.txt\n'}
+[0.615539] (shm_pytorch_processor_pkg) StdoutLine: {'line': b'writing entry points to ../../build/shm_pytorch_processor_pkg/shm_pytorch_processor_pkg.egg-info/entry_points.txt\n'}
+[0.615579] (shm_pytorch_processor_pkg) StdoutLine: {'line': b'writing requirements to ../../build/shm_pytorch_processor_pkg/shm_pytorch_processor_pkg.egg-info/requires.txt\n'}
+[0.615625] (shm_pytorch_processor_pkg) StdoutLine: {'line': b'writing top-level names to ../../build/shm_pytorch_processor_pkg/shm_pytorch_processor_pkg.egg-info/top_level.txt\n'}
+[0.615682] (shm_pytorch_processor_pkg) StdoutLine: {'line': b"writing manifest file '../../build/shm_pytorch_processor_pkg/shm_pytorch_processor_pkg.egg-info/SOURCES.txt'\n"}
+[0.616763] (shm_pytorch_processor_pkg) StdoutLine: {'line': b"reading manifest file '../../build/shm_pytorch_processor_pkg/shm_pytorch_processor_pkg.egg-info/SOURCES.txt'\n"}
+[0.617413] (shm_pytorch_processor_pkg) StdoutLine: {'line': b"writing manifest file '../../build/shm_pytorch_processor_pkg/shm_pytorch_processor_pkg.egg-info/SOURCES.txt'\n"}
+[0.617542] (shm_pytorch_processor_pkg) StdoutLine: {'line': b'running build\n'}
+[0.617583] (shm_pytorch_processor_pkg) StdoutLine: {'line': b'running build_py\n'}
+[0.617633] (shm_pytorch_processor_pkg) StdoutLine: {'line': b'creating /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/build/shm_pytorch_processor_pkg/build\n'}
+[0.617699] (shm_pytorch_processor_pkg) StdoutLine: {'line': b'creating /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/build/shm_pytorch_processor_pkg/build/lib\n'}
+[0.617750] (shm_pytorch_processor_pkg) StdoutLine: {'line': b'creating /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/build/shm_pytorch_processor_pkg/build/lib/shm_pytorch_processor_pkg\n'}
+[0.617807] (shm_pytorch_processor_pkg) StdoutLine: {'line': b'copying shm_pytorch_processor_pkg/__init__.py -> /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/build/shm_pytorch_processor_pkg/build/lib/shm_pytorch_processor_pkg\n'}
+[0.617856] (shm_pytorch_processor_pkg) StdoutLine: {'line': b'copying shm_pytorch_processor_pkg/shm_pytorch_processor_node.py -> /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/build/shm_pytorch_processor_pkg/build/lib/shm_pytorch_processor_pkg\n'}
+[0.617951] (shm_pytorch_processor_pkg) StdoutLine: {'line': b'running install\n'}
+[0.618247] (shm_pytorch_processor_pkg) StdoutLine: {'line': b'running install_lib\n'}
+[0.618947] (shm_pytorch_processor_pkg) StdoutLine: {'line': b'creating /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/shm_pytorch_processor_pkg/lib/python3.10/site-packages/shm_pytorch_processor_pkg\n'}
+[0.618991] (shm_pytorch_processor_pkg) StdoutLine: {'line': b'copying /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/build/shm_pytorch_processor_pkg/build/lib/shm_pytorch_processor_pkg/__init__.py -> /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/shm_pytorch_processor_pkg/lib/python3.10/site-packages/shm_pytorch_processor_pkg\n'}
+[0.619039] (shm_pytorch_processor_pkg) StdoutLine: {'line': b'copying /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/build/shm_pytorch_processor_pkg/build/lib/shm_pytorch_processor_pkg/shm_pytorch_processor_node.py -> /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/shm_pytorch_processor_pkg/lib/python3.10/site-packages/shm_pytorch_processor_pkg\n'}
+[0.619303] (shm_pytorch_processor_pkg) StdoutLine: {'line': b'byte-compiling /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/shm_pytorch_processor_pkg/lib/python3.10/site-packages/shm_pytorch_processor_pkg/__init__.py to __init__.cpython-310.pyc\n'}
+[0.619426] (shm_pytorch_processor_pkg) StdoutLine: {'line': b'byte-compiling /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/shm_pytorch_processor_pkg/lib/python3.10/site-packages/shm_pytorch_processor_pkg/shm_pytorch_processor_node.py to shm_pytorch_processor_node.cpython-310.pyc\n'}
+[0.620759] (shm_pytorch_processor_pkg) StdoutLine: {'line': b'running install_data\n'}
+[0.620934] (shm_pytorch_processor_pkg) StdoutLine: {'line': b'creating /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/shm_pytorch_processor_pkg/share/ament_index\n'}
+[0.621000] (shm_pytorch_processor_pkg) StdoutLine: {'line': b'creating /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/shm_pytorch_processor_pkg/share/ament_index/resource_index\n'}
+[0.621034] (shm_pytorch_processor_pkg) StdoutLine: {'line': b'creating /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/shm_pytorch_processor_pkg/share/ament_index/resource_index/packages\n'}
+[0.621062] (shm_pytorch_processor_pkg) StdoutLine: {'line': b'copying resource/shm_pytorch_processor_pkg -> /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/shm_pytorch_processor_pkg/share/ament_index/resource_index/packages\n'}
+[0.621088] (shm_pytorch_processor_pkg) StdoutLine: {'line': b'copying package.xml -> /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/shm_pytorch_processor_pkg/share/shm_pytorch_processor_pkg\n'}
+[0.621113] (shm_pytorch_processor_pkg) StdoutLine: {'line': b'running install_egg_info\n'}
+[0.622472] (shm_pytorch_processor_pkg) StdoutLine: {'line': b'Copying ../../build/shm_pytorch_processor_pkg/shm_pytorch_processor_pkg.egg-info to /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/shm_pytorch_processor_pkg/lib/python3.10/site-packages/shm_pytorch_processor_pkg-0.0.0-py3.10.egg-info\n'}
+[0.622935] (shm_pytorch_processor_pkg) StdoutLine: {'line': b'running install_scripts\n'}
+[0.634822] (auto_aim) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")\n'}
+[0.637010] (shm_pytorch_processor_pkg) StdoutLine: {'line': b'Installing shm_pytorch_processor_node script to /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/shm_pytorch_processor_pkg/lib/shm_pytorch_processor_pkg\n'}
+[0.637233] (shm_pytorch_processor_pkg) StdoutLine: {'line': b"writing list of installed files to '/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/build/shm_pytorch_processor_pkg/install.log'\n"}
+[0.659390] (shm_pytorch_processor_pkg) CommandEnded: {'returncode': 0}
+[0.659792] (auto_aim) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include\n'}
+[0.667343] (shm_pytorch_processor_pkg) JobEnded: {'identifier': 'shm_pytorch_processor_pkg', 'rc': 0}
+[0.690062] (auto_aim) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.696933] (auto_aim) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[0.700440] (-) TimerEvent: {}
+[0.747449] (auto_aim) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[0.748147] (auto_aim) StdoutLine: {'line': b'-- Found Threads: TRUE\n'}
+[0.798017] (auto_aim) StdoutLine: {'line': b'-- Found cv_bridge: 3.2.1 (/opt/ros/humble/share/cv_bridge/cmake)\n'}
+[0.800563] (-) TimerEvent: {}
+[0.834080] (auto_aim) StdoutLine: {'line': b'-- Found OpenCV: /usr/local (found version "4.12.0")\n'}
+[0.839727] (auto_aim) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[0.900687] (-) TimerEvent: {}
+[1.001028] (-) TimerEvent: {}
+[1.101256] (-) TimerEvent: {}
+[1.140595] (auto_aim) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[1.201376] (-) TimerEvent: {}
+[1.301601] (-) TimerEvent: {}
+[1.402001] (-) TimerEvent: {}
+[1.502296] (-) TimerEvent: {}
+[1.602584] (-) TimerEvent: {}
+[1.646169] (auto_aim) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.702709] (-) TimerEvent: {}
+[1.802959] (-) TimerEvent: {}
+[1.850147] (auto_aim) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.852831] (auto_aim) StderrLine: {'line': b'\x1b[33mCMake Warning (dev) at /opt/ros/humble/share/rosidl_generator_py/cmake/rosidl_generator_py_generate_interfaces.cmake:20 (find_package):\n'}
+[1.852963] (auto_aim) StderrLine: {'line': b'  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules\n'}
+[1.853031] (auto_aim) StderrLine: {'line': b'  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use\n'}
+[1.853077] (auto_aim) StderrLine: {'line': b'  the cmake_policy command to set the policy and suppress this warning.\n'}
+[1.853119] (auto_aim) StderrLine: {'line': b'\n'}
+[1.853161] (auto_aim) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[1.853200] (auto_aim) StderrLine: {'line': b'  /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)\n'}
+[1.853240] (auto_aim) StderrLine: {'line': b'  /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:286 (ament_execute_extensions)\n'}
+[1.853279] (auto_aim) StderrLine: {'line': b'  CMakeLists.txt:21 (rosidl_generate_interfaces)\n'}
+[1.853314] (auto_aim) StderrLine: {'line': b'This warning is for project developers.  Use -Wno-dev to suppress it.\n'}
+[1.853387] (auto_aim) StderrLine: {'line': b'\x1b[0m\n'}
+[1.867761] (auto_aim) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6")\n'}
+[1.869602] (auto_aim) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[1.870116] (auto_aim) StderrLine: {'line': b'\x1b[33mCMake Warning (dev) at /opt/ros/humble/share/python_cmake_module/cmake/Modules/FindPythonExtra.cmake:52 (find_package):\n'}
+[1.870211] (auto_aim) StderrLine: {'line': b'  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules\n'}
+[1.870259] (auto_aim) StderrLine: {'line': b'  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use\n'}
+[1.870297] (auto_aim) StderrLine: {'line': b'  the cmake_policy command to set the policy and suppress this warning.\n'}
+[1.870333] (auto_aim) StderrLine: {'line': b'\n'}
+[1.870368] (auto_aim) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[1.870399] (auto_aim) StderrLine: {'line': b'  /opt/ros/humble/share/rosidl_generator_py/cmake/rosidl_generator_py_generate_interfaces.cmake:23 (find_package)\n'}
+[1.870429] (auto_aim) StderrLine: {'line': b'  /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)\n'}
+[1.870459] (auto_aim) StderrLine: {'line': b'  /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:286 (ament_execute_extensions)\n'}
+[1.870501] (auto_aim) StderrLine: {'line': b'  CMakeLists.txt:21 (rosidl_generate_interfaces)\n'}
+[1.870531] (auto_aim) StderrLine: {'line': b'This warning is for project developers.  Use -Wno-dev to suppress it.\n'}
+[1.870563] (auto_aim) StderrLine: {'line': b'\x1b[0m\n'}
+[1.885832] (auto_aim) StderrLine: {'line': b'\x1b[33mCMake Warning (dev) at /opt/ros/humble/share/python_cmake_module/cmake/Modules/FindPythonExtra.cmake:140 (find_package):\n'}
+[1.886001] (auto_aim) StderrLine: {'line': b'  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules\n'}
+[1.886041] (auto_aim) StderrLine: {'line': b'  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use\n'}
+[1.886070] (auto_aim) StderrLine: {'line': b'  the cmake_policy command to set the policy and suppress this warning.\n'}
+[1.886098] (auto_aim) StderrLine: {'line': b'\n'}
+[1.886131] (auto_aim) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[1.886157] (auto_aim) StderrLine: {'line': b'  /opt/ros/humble/share/rosidl_generator_py/cmake/rosidl_generator_py_generate_interfaces.cmake:23 (find_package)\n'}
+[1.886181] (auto_aim) StderrLine: {'line': b'  /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)\n'}
+[1.886204] (auto_aim) StderrLine: {'line': b'  /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:286 (ament_execute_extensions)\n'}
+[1.886228] (auto_aim) StderrLine: {'line': b'  CMakeLists.txt:21 (rosidl_generate_interfaces)\n'}
+[1.886251] (auto_aim) StderrLine: {'line': b'This warning is for project developers.  Use -Wno-dev to suppress it.\n'}
+[1.886275] (auto_aim) StderrLine: {'line': b'\x1b[0m\n'}
+[1.891946] (auto_aim) StdoutLine: {'line': b'-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5")\n'}
+[1.892109] (auto_aim) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[1.892160] (auto_aim) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[1.892196] (auto_aim) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so\n'}
+[1.903075] (-) TimerEvent: {}
+[1.907589] (auto_aim) StdoutLine: {'line': b'-- Found PythonExtra: .so\n'}
+[1.941692] (auto_aim) StdoutLine: {'line': b'-- Configuring done (1.9s)\n'}
+[2.003256] (-) TimerEvent: {}
+[2.018556] (auto_aim) StdoutLine: {'line': b'-- Generating done (0.1s)\n'}
+[2.028985] (auto_aim) StdoutLine: {'line': b'-- Build files have been written to: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/build/auto_aim\n'}
+[2.039018] (auto_aim) CommandEnded: {'returncode': 0}
+[2.039659] (auto_aim) JobProgress: {'identifier': 'auto_aim', 'progress': 'build'}
+[2.040098] (auto_aim) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/build/auto_aim', '--', '-j12', '-l12'], 'cwd': '/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/build/auto_aim', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('HTTPS_PROXY', 'http://127.0.0.1:7897/'), ('no_proxy', 'localhost,127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,172.29.0.0/16,::1'), ('LANGUAGE', 'zh_CN'), ('USER', 'dyj'), ('LC_TIME', 'zh_CN.UTF-8'), ('all_proxy', 'socks://127.0.0.1:7897/'), ('XDG_SESSION_TYPE', 'x11'), ('ALLUSERSPROFILE', '/opt/MVS/MVFG'), ('SHLVL', '1'), ('LIBGL_ALWAYS_SOFTWARE', '1'), ('LD_LIBRARY_PATH', '/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/local/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32::/usr/local/cuda-11.8/lib64'), ('HOME', '/home/dyj'), ('CONDA_SHLVL', '0'), ('DESKTOP_SESSION', 'ubuntu'), ('NO_PROXY', 'localhost,127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,172.29.0.0/16,::1'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('XDG_SEAT_PATH', '/org/freedesktop/DisplayManager/Seat0'), ('IGN_RENDER_ENGINE', 'ogre'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1623'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2ad0ab8d910a8989ee1f39ac68a2781e'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('CPLUS_INCLUDE_PATH', '/usr/local/include/opencv4:'), ('IM_CONFIG_PHASE', '1'), ('https_proxy', 'http://127.0.0.1:7897/'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'fcitx'), ('LOGNAME', 'dyj'), ('ALL_PROXY', 'socks://127.0.0.1:7897/'), ('http_proxy', 'http://127.0.0.1:7897/'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/usr/local/lib/pkgconfig:'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', '/home/dyj/.gazebo/models'), ('LIBGL_ALWAYS_INDIRECT', '1'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('MVCAM_SDK_PATH', '/opt/MVS'), ('PATH', '/opt/ros/humble/bin:/usr/local/cuda-12.4/bin:/home/dyj/miniconda3/condabin:/home/dyj/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/cuda-11.8/bin'), ('SESSION_MANAGER', 'local/dyj:@/tmp/.ICE-unix/1623,unix/dyj:/tmp/.ICE-unix/1623'), ('GDM_LANG', 'zh_CN'), ('MVCAM_GENICAM_CLPROTOCOL', '/opt/MVS/lib/CLProtocol'), ('XDG_SESSION_PATH', '/org/freedesktop/DisplayManager/Session0'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/850e0a83_318a_471e_acbe_5970c769e788'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=fcitx'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/home/dyj/.Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.182'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('XDG_GREETER_DATA_DIR', '/var/lib/lightdm-data/dyj'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/dyj/miniconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('Torch_DIR', '/home/dyj/libtorch/share/cmake/Torch'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('QT_IM_MODULE', 'fcitx'), ('PWD', '/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/build/auto_aim'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/dyj/miniconda3/bin/conda'), ('CLUTTER_IM_MODULE', 'fcitx'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2ad0ab8d910a8989ee1f39ac68a2781e'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('HTTP_PROXY', 'http://127.0.0.1:7897/'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/dyj/libtorch/share/cmake/Torch::/opt/ros/humble'), ('MVCAM_COMMON_RUNENV', '/opt/MVS/lib')]), 'shell': False}
+[2.061572] (auto_aim) StdoutLine: {'line': b'[  1%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[2.066559] (auto_aim) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding CXX object CMakeFiles/crc_lib.dir/src/nodes/CRC.cpp.o\x1b[0m\n'}
+[2.067274] (auto_aim) StdoutLine: {'line': b'[  5%] \x1b[32mBuilding CXX object CMakeFiles/armor_detector.dir/src/armor_detector/LightBarDetector.cpp.o\x1b[0m\n'}
+[2.067447] (auto_aim) StdoutLine: {'line': b'[  8%] \x1b[32mBuilding CXX object CMakeFiles/armor_detector.dir/src/armor_detector/ArmorClassifier.cpp.o\x1b[0m\n'}
+[2.067534] (auto_aim) StdoutLine: {'line': b'[  8%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[2.067686] (auto_aim) StdoutLine: {'line': b'[ 11%] \x1b[32mBuilding CXX object CMakeFiles/armor_detector.dir/src/armor_detector/ArmorSolver.cpp.o\x1b[0m\n'}
+[2.068086] (auto_aim) StdoutLine: {'line': b'[ 13%] \x1b[32mBuilding CXX object CMakeFiles/armor_detector.dir/src/armor_detector/ArmorDetector.cpp.o\x1b[0m\n'}
+[2.068228] (auto_aim) StdoutLine: {'line': b'[ 13%] \x1b[32mBuilding CXX object CMakeFiles/armor_detector.dir/src/armor_detector/ArmorAngleKalman.cpp.o\x1b[0m\n'}
+[2.069775] (auto_aim) StdoutLine: {'line': b'[ 15%] \x1b[32mBuilding CXX object CMakeFiles/armor_detector.dir/src/armor_detector/BallisticSolver.cpp.o\x1b[0m\n'}
+[2.070012] (auto_aim) StdoutLine: {'line': b'[ 16%] \x1b[32mBuilding CXX object CMakeFiles/armor_detector.dir/src/camera/cameraConnect.cpp.o\x1b[0m\n'}
+[2.070230] (auto_aim) StdoutLine: {'line': b'[ 16%] Built target ament_cmake_python_copy_auto_aim\n'}
+[2.072441] (auto_aim) StdoutLine: {'line': b'[ 18%] \x1b[32mBuilding CXX object CMakeFiles/armor_detector.dir/src/test_codes/FrameRateCounter.cpp.o\x1b[0m\n'}
+[2.099908] (auto_aim) StdoutLine: {'line': b'[ 20%] \x1b[32m\x1b[1mLinking CXX shared library libcrc_lib.so\x1b[0m\n'}
+[2.106034] (-) TimerEvent: {}
+[2.197049] (auto_aim) StdoutLine: {'line': b'[ 20%] Built target crc_lib\n'}
+[2.199785] (auto_aim) StdoutLine: {'line': b'[ 22%] \x1b[32mBuilding CXX object CMakeFiles/armor_detector.dir/src/test_codes/UnwarpUtils.cpp.o\x1b[0m\n'}
+[2.206136] (-) TimerEvent: {}
+[2.309333] (-) TimerEvent: {}
+[2.393889] (auto_aim) StdoutLine: {'line': b'running egg_info\n'}
+[2.394885] (auto_aim) StdoutLine: {'line': b'creating auto_aim.egg-info\n'}
+[2.395417] (auto_aim) StdoutLine: {'line': b'writing auto_aim.egg-info/PKG-INFO\n'}
+[2.395851] (auto_aim) StdoutLine: {'line': b'writing dependency_links to auto_aim.egg-info/dependency_links.txt\n'}
+[2.396322] (auto_aim) StdoutLine: {'line': b'writing top-level names to auto_aim.egg-info/top_level.txt\n'}
+[2.397043] (auto_aim) StdoutLine: {'line': b"writing manifest file 'auto_aim.egg-info/SOURCES.txt'\n"}
+[2.400593] (auto_aim) StdoutLine: {'line': b"reading manifest file 'auto_aim.egg-info/SOURCES.txt'\n"}
+[2.401610] (auto_aim) StdoutLine: {'line': b"writing manifest file 'auto_aim.egg-info/SOURCES.txt'\n"}
+[2.409451] (-) TimerEvent: {}
+[2.455246] (auto_aim) StdoutLine: {'line': b'[ 23%] \x1b[32mBuilding CXX object CMakeFiles/armor_detector.dir/src/test_codes/PositionPredictor.cpp.o\x1b[0m\n'}
+[2.458064] (auto_aim) StdoutLine: {'line': b'[ 23%] Built target ament_cmake_python_build_auto_aim_egg\n'}
+[2.464192] (auto_aim) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/armor_detector.dir/src/test_codes/VideoInput.cpp.o\x1b[0m\n'}
+[2.511165] (-) TimerEvent: {}
+[2.539890] (auto_aim) StdoutLine: {'line': b'[ 25%] Built target auto_aim__cpp\n'}
+[2.545399] (auto_aim) StdoutLine: {'line': b'[ 27%] \x1b[32mBuilding CXX object CMakeFiles/armor_detector.dir/src/test_codes/ImagesInput.cpp.o\x1b[0m\n'}
+[2.611279] (-) TimerEvent: {}
+[2.621854] (auto_aim) StdoutLine: {'line': b'[ 28%] \x1b[32mBuilding C object CMakeFiles/auto_aim__rosidl_generator_c.dir/rosidl_generator_c/auto_aim/msg/detail/serial_data__functions.c.o\x1b[0m\n'}
+[2.679987] (auto_aim) StdoutLine: {'line': b'[ 30%] \x1b[32mBuilding C object CMakeFiles/auto_aim__rosidl_generator_c.dir/rosidl_generator_c/auto_aim/msg/detail/gimbal_command__functions.c.o\x1b[0m\n'}
+[2.711395] (-) TimerEvent: {}
+[2.773293] (auto_aim) StdoutLine: {'line': b'[ 32%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[2.797509] (auto_aim) StdoutLine: {'line': b'[ 33%] \x1b[32m\x1b[1mLinking C shared library libauto_aim__rosidl_generator_c.so\x1b[0m\n'}
+[2.812054] (-) TimerEvent: {}
+[2.842531] (auto_aim) StdoutLine: {'line': b'[ 33%] Built target auto_aim__rosidl_generator_c\n'}
+[2.850072] (auto_aim) StdoutLine: {'line': b'[ 35%] \x1b[32mBuilding CXX object CMakeFiles/armor_detector.dir/src/test_codes/SharedMemoryTorch.cpp.o\x1b[0m\n'}
+[2.912160] (-) TimerEvent: {}
+[3.015084] (-) TimerEvent: {}
+[3.115662] (-) TimerEvent: {}
+[3.179321] (auto_aim) StdoutLine: {'line': b'[ 37%] \x1b[32mBuilding CXX object CMakeFiles/auto_aim__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/auto_aim/msg/serial_data__type_support.cpp.o\x1b[0m\n'}
+[3.215999] (-) TimerEvent: {}
+[3.316479] (-) TimerEvent: {}
+[3.416909] (-) TimerEvent: {}
+[3.519062] (-) TimerEvent: {}
+[3.566116] (auto_aim) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object CMakeFiles/auto_aim__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/auto_aim/msg/gimbal_command__type_support.cpp.o\x1b[0m\n'}
+[3.619175] (-) TimerEvent: {}
+[3.719575] (-) TimerEvent: {}
+[3.820185] (-) TimerEvent: {}
+[3.923367] (-) TimerEvent: {}
+[3.996232] (auto_aim) StdoutLine: {'line': b'[ 40%] \x1b[32m\x1b[1mLinking CXX shared library libauto_aim__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[4.023486] (-) TimerEvent: {}
+[4.123933] (-) TimerEvent: {}
+[4.124313] (auto_aim) StdoutLine: {'line': b'[ 40%] Built target auto_aim__rosidl_typesupport_cpp\n'}
+[4.134170] (auto_aim) StdoutLine: {'line': b'[ 42%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[4.227070] (-) TimerEvent: {}
+[4.265253] (auto_aim) StdoutLine: {'line': b'[ 44%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[4.330038] (-) TimerEvent: {}
+[4.430849] (-) TimerEvent: {}
+[4.531341] (-) TimerEvent: {}
+[4.631644] (-) TimerEvent: {}
+[4.732024] (-) TimerEvent: {}
+[4.745817] (auto_aim) StdoutLine: {'line': b'[ 45%] \x1b[32mBuilding CXX object CMakeFiles/auto_aim__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/auto_aim/msg/detail/dds_fastrtps/serial_data__type_support.cpp.o\x1b[0m\n'}
+[4.833253] (-) TimerEvent: {}
+[4.834319] (auto_aim) StdoutLine: {'line': b'[ 47%] \x1b[32mBuilding C object CMakeFiles/auto_aim__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/auto_aim/msg/detail/serial_data__type_support.c.o\x1b[0m\n'}
+[4.894189] (auto_aim) StdoutLine: {'line': b'[ 49%] \x1b[32mBuilding C object CMakeFiles/auto_aim__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/auto_aim/msg/detail/gimbal_command__type_support.c.o\x1b[0m\n'}
+[4.933370] (-) TimerEvent: {}
+[4.933880] (auto_aim) StdoutLine: {'line': b'[ 50%] \x1b[32m\x1b[1mLinking C shared library libauto_aim__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[4.975435] (auto_aim) StdoutLine: {'line': b'[ 50%] Built target auto_aim__rosidl_typesupport_introspection_c\n'}
+[4.984715] (auto_aim) StdoutLine: {'line': b'[ 52%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[5.033537] (-) TimerEvent: {}
+[5.100403] (auto_aim) StdoutLine: {'line': b'[ 54%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[5.136073] (-) TimerEvent: {}
+[5.217331] (auto_aim) StdoutLine: {'line': b'[ 55%] \x1b[32mBuilding CXX object CMakeFiles/auto_aim__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/auto_aim/msg/detail/dds_fastrtps/gimbal_command__type_support.cpp.o\x1b[0m\n'}
+[5.236170] (-) TimerEvent: {}
+[5.317848] (auto_aim) StdoutLine: {'line': b'[ 57%] \x1b[32mBuilding CXX object CMakeFiles/com_node.dir/src/nodes/Com_Node.cpp.o\x1b[0m\n'}
+[5.336293] (-) TimerEvent: {}
+[5.436603] (-) TimerEvent: {}
+[5.463046] (auto_aim) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding CXX object CMakeFiles/auto_aim__rosidl_typesupport_c.dir/rosidl_typesupport_c/auto_aim/msg/gimbal_command__type_support.cpp.o\x1b[0m\n'}
+[5.463230] (auto_aim) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding CXX object CMakeFiles/auto_aim__rosidl_typesupport_c.dir/rosidl_typesupport_c/auto_aim/msg/serial_data__type_support.cpp.o\x1b[0m\n'}
+[5.494062] (auto_aim) StdoutLine: {'line': b'[ 62%] \x1b[32m\x1b[1mLinking CXX shared library libauto_aim__rosidl_typesupport_c.so\x1b[0m\n'}
+[5.536735] (-) TimerEvent: {}
+[5.548938] (auto_aim) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/auto_aim__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/auto_aim/msg/detail/serial_data__type_support.cpp.o\x1b[0m\n'}
+[5.549408] (auto_aim) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/auto_aim__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/auto_aim/msg/detail/gimbal_command__type_support.cpp.o\x1b[0m\n'}
+[5.593556] (auto_aim) StdoutLine: {'line': b'[ 66%] Built target auto_aim__rosidl_typesupport_c\n'}
+[5.600676] (auto_aim) StdoutLine: {'line': b'[ 67%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[5.636863] (-) TimerEvent: {}
+[5.737576] (-) TimerEvent: {}
+[5.796345] (auto_aim) StdoutLine: {'line': b'[ 69%] \x1b[32m\x1b[1mLinking CXX shared library libauto_aim__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[5.837690] (-) TimerEvent: {}
+[5.938376] (-) TimerEvent: {}
+[6.032388] (auto_aim) StdoutLine: {'line': b'[ 69%] Built target auto_aim__rosidl_typesupport_fastrtps_cpp\n'}
+[6.038500] (-) TimerEvent: {}
+[6.050027] (auto_aim) StdoutLine: {'line': b'[ 72%] \x1b[32mBuilding CXX object CMakeFiles/auto_aim__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/auto_aim/msg/detail/serial_data__type_support_c.cpp.o\x1b[0m\n'}
+[6.050226] (auto_aim) StdoutLine: {'line': b'[ 72%] \x1b[32mBuilding CXX object CMakeFiles/auto_aim__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/auto_aim/msg/detail/gimbal_command__type_support_c.cpp.o\x1b[0m\n'}
+[6.053926] (auto_aim) StdoutLine: {'line': b'[ 74%] \x1b[32m\x1b[1mLinking CXX shared library libauto_aim__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[6.138960] (-) TimerEvent: {}
+[6.171002] (auto_aim) StdoutLine: {'line': b'[ 74%] Built target auto_aim__rosidl_typesupport_introspection_cpp\n'}
+[6.239709] (-) TimerEvent: {}
+[6.340183] (-) TimerEvent: {}
+[6.414005] (auto_aim) StdoutLine: {'line': b'[ 76%] \x1b[32m\x1b[1mLinking CXX shared library libauto_aim__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[6.440344] (-) TimerEvent: {}
+[6.541079] (-) TimerEvent: {}
+[6.583530] (auto_aim) StdoutLine: {'line': b'[ 76%] Built target auto_aim__rosidl_typesupport_fastrtps_c\n'}
+[6.593749] (auto_aim) StdoutLine: {'line': b'[ 76%] Built target auto_aim\n'}
+[6.603526] (auto_aim) StdoutLine: {'line': b'[ 77%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[6.641151] (-) TimerEvent: {}
+[6.741506] (-) TimerEvent: {}
+[6.841870] (-) TimerEvent: {}
+[6.942354] (-) TimerEvent: {}
+[6.951613] (auto_aim) StdoutLine: {'line': b'[ 77%] Built target auto_aim__py\n'}
+[6.962912] (auto_aim) StdoutLine: {'line': b'[ 79%] \x1b[32mBuilding C object CMakeFiles/auto_aim__rosidl_generator_py.dir/rosidl_generator_py/auto_aim/msg/_gimbal_command_s.c.o\x1b[0m\n'}
+[6.963202] (auto_aim) StdoutLine: {'line': b'[ 81%] \x1b[32mBuilding C object CMakeFiles/auto_aim__rosidl_generator_py.dir/rosidl_generator_py/auto_aim/msg/_serial_data_s.c.o\x1b[0m\n'}
+[7.042459] (-) TimerEvent: {}
+[7.070478] (auto_aim) StdoutLine: {'line': b'[ 83%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/auto_aim/libauto_aim__rosidl_generator_py.so\x1b[0m\n'}
+[7.099243] (auto_aim) StdoutLine: {'line': b'[ 83%] Built target auto_aim__rosidl_generator_py\n'}
+[7.110866] (auto_aim) StdoutLine: {'line': b'[ 88%] \x1b[32mBuilding C object CMakeFiles/auto_aim__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/auto_aim/_auto_aim_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[7.111070] (auto_aim) StdoutLine: {'line': b'[ 88%] \x1b[32mBuilding C object CMakeFiles/auto_aim__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/auto_aim/_auto_aim_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[7.111140] (auto_aim) StdoutLine: {'line': b'[ 88%] \x1b[32mBuilding C object CMakeFiles/auto_aim__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/auto_aim/_auto_aim_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[7.142634] (-) TimerEvent: {}
+[7.212635] (auto_aim) StdoutLine: {'line': b'[ 91%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/auto_aim/auto_aim_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[7.212807] (auto_aim) StdoutLine: {'line': b'[ 91%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/auto_aim/auto_aim_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[7.233772] (auto_aim) StdoutLine: {'line': b'[ 91%] Built target auto_aim__rosidl_typesupport_introspection_c__pyext\n'}
+[7.234391] (auto_aim) StdoutLine: {'line': b'[ 91%] Built target auto_aim__rosidl_typesupport_c__pyext\n'}
+[7.242763] (-) TimerEvent: {}
+[7.260518] (auto_aim) StdoutLine: {'line': b'[ 93%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/auto_aim/auto_aim_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[7.282017] (auto_aim) StdoutLine: {'line': b'[ 93%] Built target auto_aim__rosidl_typesupport_fastrtps_c__pyext\n'}
+[7.343049] (-) TimerEvent: {}
+[7.443430] (-) TimerEvent: {}
+[7.543857] (-) TimerEvent: {}
+[7.644170] (-) TimerEvent: {}
+[7.744509] (-) TimerEvent: {}
+[7.844903] (-) TimerEvent: {}
+[7.945225] (-) TimerEvent: {}
+[8.045518] (-) TimerEvent: {}
+[8.145996] (-) TimerEvent: {}
+[8.246324] (-) TimerEvent: {}
+[8.346632] (-) TimerEvent: {}
+[8.446971] (-) TimerEvent: {}
+[8.547323] (-) TimerEvent: {}
+[8.647624] (-) TimerEvent: {}
+[8.747900] (-) TimerEvent: {}
+[8.848215] (-) TimerEvent: {}
+[8.948496] (-) TimerEvent: {}
+[9.049004] (-) TimerEvent: {}
+[9.117388] (auto_aim) StdoutLine: {'line': b'[ 94%] \x1b[32m\x1b[1mLinking CXX shared library libarmor_detector.so\x1b[0m\n'}
+[9.149119] (-) TimerEvent: {}
+[9.249442] (-) TimerEvent: {}
+[9.322724] (auto_aim) StderrLine: {'line': b'lto-wrapper: warning: using serial compilation of 3 LTRANS jobs\n'}
+[9.349530] (-) TimerEvent: {}
+[9.449859] (-) TimerEvent: {}
+[9.550168] (-) TimerEvent: {}
+[9.650500] (-) TimerEvent: {}
+[9.750794] (-) TimerEvent: {}
+[9.851048] (-) TimerEvent: {}
+[9.951336] (-) TimerEvent: {}
+[10.051717] (-) TimerEvent: {}
+[10.152060] (-) TimerEvent: {}
+[10.252316] (-) TimerEvent: {}
+[10.352692] (-) TimerEvent: {}
+[10.453033] (-) TimerEvent: {}
+[10.553407] (-) TimerEvent: {}
+[10.653670] (-) TimerEvent: {}
+[10.753993] (-) TimerEvent: {}
+[10.854363] (-) TimerEvent: {}
+[10.954661] (-) TimerEvent: {}
+[11.055038] (-) TimerEvent: {}
+[11.155402] (-) TimerEvent: {}
+[11.175278] (auto_aim) StdoutLine: {'line': b'[ 96%] \x1b[32m\x1b[1mLinking CXX executable com_node\x1b[0m\n'}
+[11.255507] (-) TimerEvent: {}
+[11.355784] (-) TimerEvent: {}
+[11.456206] (-) TimerEvent: {}
+[11.556544] (-) TimerEvent: {}
+[11.656899] (-) TimerEvent: {}
+[11.661186] (auto_aim) StdoutLine: {'line': b'[ 96%] Built target armor_detector\n'}
+[11.673356] (auto_aim) StdoutLine: {'line': b'[ 98%] \x1b[32mBuilding CXX object CMakeFiles/armor_detect_node.dir/src/nodes/ArmorDetect_Node.cpp.o\x1b[0m\n'}
+[11.757019] (-) TimerEvent: {}
+[11.857296] (-) TimerEvent: {}
+[11.957748] (-) TimerEvent: {}
+[12.058055] (-) TimerEvent: {}
+[12.158398] (-) TimerEvent: {}
+[12.258670] (-) TimerEvent: {}
+[12.358987] (-) TimerEvent: {}
+[12.459452] (-) TimerEvent: {}
+[12.460924] (auto_aim) StdoutLine: {'line': b'[ 98%] Built target com_node\n'}
+[12.559578] (-) TimerEvent: {}
+[12.659917] (-) TimerEvent: {}
+[12.760253] (-) TimerEvent: {}
+[12.860578] (-) TimerEvent: {}
+[12.960912] (-) TimerEvent: {}
+[13.061173] (-) TimerEvent: {}
+[13.161399] (-) TimerEvent: {}
+[13.261630] (-) TimerEvent: {}
+[13.361892] (-) TimerEvent: {}
+[13.462119] (-) TimerEvent: {}
+[13.562436] (-) TimerEvent: {}
+[13.662759] (-) TimerEvent: {}
+[13.763091] (-) TimerEvent: {}
+[13.863414] (-) TimerEvent: {}
+[13.963742] (-) TimerEvent: {}
+[14.064076] (-) TimerEvent: {}
+[14.164403] (-) TimerEvent: {}
+[14.264671] (-) TimerEvent: {}
+[14.365016] (-) TimerEvent: {}
+[14.465359] (-) TimerEvent: {}
+[14.565605] (-) TimerEvent: {}
+[14.665983] (-) TimerEvent: {}
+[14.766223] (-) TimerEvent: {}
+[14.866463] (-) TimerEvent: {}
+[14.966749] (-) TimerEvent: {}
+[15.067169] (-) TimerEvent: {}
+[15.167535] (-) TimerEvent: {}
+[15.267856] (-) TimerEvent: {}
+[15.368250] (-) TimerEvent: {}
+[15.468629] (-) TimerEvent: {}
+[15.568922] (-) TimerEvent: {}
+[15.669194] (-) TimerEvent: {}
+[15.769564] (-) TimerEvent: {}
+[15.869938] (-) TimerEvent: {}
+[15.970331] (-) TimerEvent: {}
+[16.070702] (-) TimerEvent: {}
+[16.171081] (-) TimerEvent: {}
+[16.271460] (-) TimerEvent: {}
+[16.371844] (-) TimerEvent: {}
+[16.472110] (-) TimerEvent: {}
+[16.572474] (-) TimerEvent: {}
+[16.672841] (-) TimerEvent: {}
+[16.773217] (-) TimerEvent: {}
+[16.873592] (-) TimerEvent: {}
+[16.973964] (-) TimerEvent: {}
+[17.074466] (-) TimerEvent: {}
+[17.174798] (-) TimerEvent: {}
+[17.275119] (-) TimerEvent: {}
+[17.375443] (-) TimerEvent: {}
+[17.475782] (-) TimerEvent: {}
+[17.576109] (-) TimerEvent: {}
+[17.676439] (-) TimerEvent: {}
+[17.749512] (auto_aim) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable armor_detect_node\x1b[0m\n'}
+[17.776573] (-) TimerEvent: {}
+[17.876911] (-) TimerEvent: {}
+[17.977214] (-) TimerEvent: {}
+[18.077553] (-) TimerEvent: {}
+[18.177838] (-) TimerEvent: {}
+[18.278130] (-) TimerEvent: {}
+[18.378415] (-) TimerEvent: {}
+[18.478792] (-) TimerEvent: {}
+[18.579148] (-) TimerEvent: {}
+[18.679494] (-) TimerEvent: {}
+[18.780041] (-) TimerEvent: {}
+[18.880322] (-) TimerEvent: {}
+[18.980625] (-) TimerEvent: {}
+[19.080924] (-) TimerEvent: {}
+[19.181246] (-) TimerEvent: {}
+[19.281538] (-) TimerEvent: {}
+[19.381839] (-) TimerEvent: {}
+[19.482090] (-) TimerEvent: {}
+[19.582363] (-) TimerEvent: {}
+[19.682655] (-) TimerEvent: {}
+[19.782954] (-) TimerEvent: {}
+[19.883465] (-) TimerEvent: {}
+[19.983734] (-) TimerEvent: {}
+[20.084068] (-) TimerEvent: {}
+[20.184335] (-) TimerEvent: {}
+[20.284670] (-) TimerEvent: {}
+[20.384941] (-) TimerEvent: {}
+[20.485282] (-) TimerEvent: {}
+[20.585555] (-) TimerEvent: {}
+[20.685882] (-) TimerEvent: {}
+[20.786128] (-) TimerEvent: {}
+[20.803787] (auto_aim) StdoutLine: {'line': b'[100%] Built target armor_detect_node\n'}
+[20.808693] (auto_aim) CommandEnded: {'returncode': 0}
+[20.809162] (auto_aim) JobProgress: {'identifier': 'auto_aim', 'progress': 'install'}
+[20.812160] (auto_aim) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/build/auto_aim'], 'cwd': '/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/build/auto_aim', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('HTTPS_PROXY', 'http://127.0.0.1:7897/'), ('no_proxy', 'localhost,127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,172.29.0.0/16,::1'), ('LANGUAGE', 'zh_CN'), ('USER', 'dyj'), ('LC_TIME', 'zh_CN.UTF-8'), ('all_proxy', 'socks://127.0.0.1:7897/'), ('XDG_SESSION_TYPE', 'x11'), ('ALLUSERSPROFILE', '/opt/MVS/MVFG'), ('SHLVL', '1'), ('LIBGL_ALWAYS_SOFTWARE', '1'), ('LD_LIBRARY_PATH', '/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/local/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32::/usr/local/cuda-11.8/lib64'), ('HOME', '/home/dyj'), ('CONDA_SHLVL', '0'), ('DESKTOP_SESSION', 'ubuntu'), ('NO_PROXY', 'localhost,127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,172.29.0.0/16,::1'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('XDG_SEAT_PATH', '/org/freedesktop/DisplayManager/Seat0'), ('IGN_RENDER_ENGINE', 'ogre'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1623'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2ad0ab8d910a8989ee1f39ac68a2781e'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('CPLUS_INCLUDE_PATH', '/usr/local/include/opencv4:'), ('IM_CONFIG_PHASE', '1'), ('https_proxy', 'http://127.0.0.1:7897/'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'fcitx'), ('LOGNAME', 'dyj'), ('ALL_PROXY', 'socks://127.0.0.1:7897/'), ('http_proxy', 'http://127.0.0.1:7897/'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/usr/local/lib/pkgconfig:'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', '/home/dyj/.gazebo/models'), ('LIBGL_ALWAYS_INDIRECT', '1'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('MVCAM_SDK_PATH', '/opt/MVS'), ('PATH', '/opt/ros/humble/bin:/usr/local/cuda-12.4/bin:/home/dyj/miniconda3/condabin:/home/dyj/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/cuda-11.8/bin'), ('SESSION_MANAGER', 'local/dyj:@/tmp/.ICE-unix/1623,unix/dyj:/tmp/.ICE-unix/1623'), ('GDM_LANG', 'zh_CN'), ('MVCAM_GENICAM_CLPROTOCOL', '/opt/MVS/lib/CLProtocol'), ('XDG_SESSION_PATH', '/org/freedesktop/DisplayManager/Session0'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/850e0a83_318a_471e_acbe_5970c769e788'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=fcitx'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/home/dyj/.Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.182'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('XDG_GREETER_DATA_DIR', '/var/lib/lightdm-data/dyj'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/dyj/miniconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('Torch_DIR', '/home/dyj/libtorch/share/cmake/Torch'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('QT_IM_MODULE', 'fcitx'), ('PWD', '/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/build/auto_aim'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/dyj/miniconda3/bin/conda'), ('CLUTTER_IM_MODULE', 'fcitx'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2ad0ab8d910a8989ee1f39ac68a2781e'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('HTTP_PROXY', 'http://127.0.0.1:7897/'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/dyj/libtorch/share/cmake/Torch::/opt/ros/humble'), ('MVCAM_COMMON_RUNENV', '/opt/MVS/lib')]), 'shell': False}
+[20.816410] (auto_aim) StdoutLine: {'line': b'-- Install configuration: "Release"\n'}
+[20.816536] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/ament_index/resource_index/rosidl_interfaces/auto_aim\n'}
+[20.816588] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim\n'}
+[20.816631] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg\n'}
+[20.816678] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/gimbal_command.h\n'}
+[20.816776] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/serial_data.h\n'}
+[20.816867] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/rosidl_generator_c__visibility_control.h\n'}
+[20.816943] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail\n'}
+[20.817038] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail/serial_data__struct.h\n'}
+[20.817171] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail/serial_data__functions.h\n'}
+[20.817268] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail/serial_data__functions.c\n'}
+[20.817310] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail/gimbal_command__struct.h\n'}
+[20.817346] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail/gimbal_command__functions.h\n'}
+[20.817381] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail/serial_data__type_support.h\n'}
+[20.817416] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail/gimbal_command__functions.c\n'}
+[20.817464] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail/gimbal_command__type_support.h\n'}
+[20.817559] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/environment/library_path.sh\n'}
+[20.817607] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/environment/library_path.dsv\n'}
+[20.817674] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/lib/libauto_aim__rosidl_generator_c.so\n'}
+[20.817812] (auto_aim) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/lib/libauto_aim__rosidl_generator_c.so" to ""\n'}
+[20.817853] (auto_aim) StdoutLine: {'line': b'-- Up-to-date: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim\n'}
+[20.817882] (auto_aim) StdoutLine: {'line': b'-- Up-to-date: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg\n'}
+[20.817919] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[20.817960] (auto_aim) StdoutLine: {'line': b'-- Up-to-date: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail\n'}
+[20.817997] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail/serial_data__rosidl_typesupport_fastrtps_c.h\n'}
+[20.818025] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail/gimbal_command__rosidl_typesupport_fastrtps_c.h\n'}
+[20.818064] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/lib/libauto_aim__rosidl_typesupport_fastrtps_c.so\n'}
+[20.818179] (auto_aim) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/lib/libauto_aim__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[20.818222] (auto_aim) StdoutLine: {'line': b'-- Up-to-date: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim\n'}
+[20.818257] (auto_aim) StdoutLine: {'line': b'-- Up-to-date: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg\n'}
+[20.818284] (auto_aim) StdoutLine: {'line': b'-- Up-to-date: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail\n'}
+[20.818320] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail/serial_data__traits.hpp\n'}
+[20.818364] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail/serial_data__builder.hpp\n'}
+[20.818388] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail/serial_data__struct.hpp\n'}
+[20.818414] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail/gimbal_command__struct.hpp\n'}
+[20.818454] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail/gimbal_command__builder.hpp\n'}
+[20.818481] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail/serial_data__type_support.hpp\n'}
+[20.818518] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail/gimbal_command__traits.hpp\n'}
+[20.818559] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail/gimbal_command__type_support.hpp\n'}
+[20.818592] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[20.818623] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/serial_data.hpp\n'}
+[20.818646] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/gimbal_command.hpp\n'}
+[20.818687] (auto_aim) StdoutLine: {'line': b'-- Up-to-date: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim\n'}
+[20.818714] (auto_aim) StdoutLine: {'line': b'-- Up-to-date: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg\n'}
+[20.818740] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[20.818781] (auto_aim) StdoutLine: {'line': b'-- Up-to-date: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail\n'}
+[20.818807] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail/dds_fastrtps\n'}
+[20.818833] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail/serial_data__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[20.818870] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail/gimbal_command__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[20.818895] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/lib/libauto_aim__rosidl_typesupport_fastrtps_cpp.so\n'}
+[20.819101] (auto_aim) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/lib/libauto_aim__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[20.819247] (auto_aim) StdoutLine: {'line': b'-- Up-to-date: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim\n'}
+[20.819318] (auto_aim) StdoutLine: {'line': b'-- Up-to-date: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg\n'}
+[20.819381] (auto_aim) StdoutLine: {'line': b'-- Up-to-date: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail\n'}
+[20.819441] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail/gimbal_command__rosidl_typesupport_introspection_c.h\n'}
+[20.819501] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail/gimbal_command__type_support.c\n'}
+[20.819560] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail/serial_data__type_support.c\n'}
+[20.819619] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail/serial_data__rosidl_typesupport_introspection_c.h\n'}
+[20.819710] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[20.819772] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/lib/libauto_aim__rosidl_typesupport_introspection_c.so\n'}
+[20.819831] (auto_aim) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/lib/libauto_aim__rosidl_typesupport_introspection_c.so" to ""\n'}
+[20.819890] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/lib/libauto_aim__rosidl_typesupport_c.so\n'}
+[20.819948] (auto_aim) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/lib/libauto_aim__rosidl_typesupport_c.so" to ""\n'}
+[20.820031] (auto_aim) StdoutLine: {'line': b'-- Up-to-date: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim\n'}
+[20.820093] (auto_aim) StdoutLine: {'line': b'-- Up-to-date: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg\n'}
+[20.820154] (auto_aim) StdoutLine: {'line': b'-- Up-to-date: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail\n'}
+[20.820213] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail/gimbal_command__type_support.cpp\n'}
+[20.820293] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail/serial_data__rosidl_typesupport_introspection_cpp.hpp\n'}
+[20.820353] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail/gimbal_command__rosidl_typesupport_introspection_cpp.hpp\n'}
+[20.820416] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/include/auto_aim/auto_aim/msg/detail/serial_data__type_support.cpp\n'}
+[20.820478] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/lib/libauto_aim__rosidl_typesupport_introspection_cpp.so\n'}
+[20.820538] (auto_aim) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/lib/libauto_aim__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[20.820598] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/lib/libauto_aim__rosidl_typesupport_cpp.so\n'}
+[20.820659] (auto_aim) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/lib/libauto_aim__rosidl_typesupport_cpp.so" to ""\n'}
+[20.820721] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/environment/pythonpath.sh\n'}
+[20.820815] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/environment/pythonpath.dsv\n'}
+[20.820879] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim-0.0.1-py3.10.egg-info\n'}
+[20.820960] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim-0.0.1-py3.10.egg-info/SOURCES.txt\n'}
+[20.821050] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim-0.0.1-py3.10.egg-info/dependency_links.txt\n'}
+[20.821092] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim-0.0.1-py3.10.egg-info/PKG-INFO\n'}
+[20.821123] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim-0.0.1-py3.10.egg-info/top_level.txt\n'}
+[20.821151] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim\n'}
+[20.821179] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim/_auto_aim_s.ep.rosidl_typesupport_c.c\n'}
+[20.821206] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim/auto_aim_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[20.821257] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim/__init__.py\n'}
+[20.821283] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim/msg\n'}
+[20.821308] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim/msg/__init__.py\n'}
+[20.821333] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim/msg/_gimbal_command_s.c\n'}
+[20.821357] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim/msg/_gimbal_command.py\n'}
+[20.821413] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim/msg/_serial_data.py\n'}
+[20.821441] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim/msg/_serial_data_s.c\n'}
+[20.821468] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim/_auto_aim_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[20.821494] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim/auto_aim_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[20.821524] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim/auto_aim_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[20.821552] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim/libauto_aim__rosidl_generator_py.so\n'}
+[20.821576] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim/_auto_aim_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[20.844172] (auto_aim) StdoutLine: {'line': b"Listing '/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim'...\n"}
+[20.844246] (auto_aim) StdoutLine: {'line': b"Compiling '/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim/__init__.py'...\n"}
+[20.844271] (auto_aim) StdoutLine: {'line': b"Listing '/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim/msg'...\n"}
+[20.844293] (auto_aim) StdoutLine: {'line': b"Compiling '/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim/msg/__init__.py'...\n"}
+[20.844315] (auto_aim) StdoutLine: {'line': b"Compiling '/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim/msg/_gimbal_command.py'...\n"}
+[20.844341] (auto_aim) StdoutLine: {'line': b"Compiling '/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim/msg/_serial_data.py'...\n"}
+[20.847401] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim/auto_aim_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[20.847496] (auto_aim) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim/auto_aim_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[20.847531] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim/auto_aim_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[20.847666] (auto_aim) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim/auto_aim_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[20.847727] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim/auto_aim_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[20.847757] (auto_aim) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/local/lib/python3.10/dist-packages/auto_aim/auto_aim_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[20.847891] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/lib/libauto_aim__rosidl_generator_py.so\n'}
+[20.848157] (auto_aim) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/lib/libauto_aim__rosidl_generator_py.so" to ""\n'}
+[20.848200] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/msg/SerialData.idl\n'}
+[20.848229] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/msg/GimbalCommand.idl\n'}
+[20.848254] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/msg/SerialData.msg\n'}
+[20.848279] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/msg/GimbalCommand.msg\n'}
+[20.848303] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/lib/auto_aim/armor_detect_node\n'}
+[20.848841] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/lib/auto_aim/com_node\n'}
+[20.849431] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/lib/libarmor_detector.so\n'}
+[20.849598] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/lib/libcrc_lib.so\n'}
+[20.849681] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/launch\n'}
+[20.849732] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/launch/auto_aim_launch.py\n'}
+[20.849852] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/ament_index/resource_index/package_run_dependencies/auto_aim\n'}
+[20.849966] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/ament_index/resource_index/parent_prefix_path/auto_aim\n'}
+[20.850041] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/environment/ament_prefix_path.sh\n'}
+[20.850104] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/environment/ament_prefix_path.dsv\n'}
+[20.850146] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/environment/path.sh\n'}
+[20.850173] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/environment/path.dsv\n'}
+[20.850219] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/local_setup.bash\n'}
+[20.850251] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/local_setup.sh\n'}
+[20.850291] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/local_setup.zsh\n'}
+[20.850318] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/local_setup.dsv\n'}
+[20.850359] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/package.dsv\n'}
+[20.850386] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/ament_index/resource_index/packages/auto_aim\n'}
+[20.850421] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/cmake/export_auto_aim__rosidl_generator_cExport.cmake\n'}
+[20.850469] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/cmake/export_auto_aim__rosidl_generator_cExport-release.cmake\n'}
+[20.850517] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/cmake/export_auto_aim__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[20.850562] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/cmake/export_auto_aim__rosidl_typesupport_fastrtps_cExport-release.cmake\n'}
+[20.850610] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/cmake/export_auto_aim__rosidl_generator_cppExport.cmake\n'}
+[20.850657] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/cmake/export_auto_aim__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[20.850702] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/cmake/export_auto_aim__rosidl_typesupport_fastrtps_cppExport-release.cmake\n'}
+[20.850750] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/cmake/auto_aim__rosidl_typesupport_introspection_cExport.cmake\n'}
+[20.850794] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/cmake/auto_aim__rosidl_typesupport_introspection_cExport-release.cmake\n'}
+[20.850840] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/cmake/auto_aim__rosidl_typesupport_cExport.cmake\n'}
+[20.850885] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/cmake/auto_aim__rosidl_typesupport_cExport-release.cmake\n'}
+[20.850932] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/cmake/auto_aim__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[20.850980] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/cmake/auto_aim__rosidl_typesupport_introspection_cppExport-release.cmake\n'}
+[20.851033] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/cmake/auto_aim__rosidl_typesupport_cppExport.cmake\n'}
+[20.851079] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/cmake/auto_aim__rosidl_typesupport_cppExport-release.cmake\n'}
+[20.851125] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/cmake/export_auto_aim__rosidl_generator_pyExport.cmake\n'}
+[20.851170] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/cmake/export_auto_aim__rosidl_generator_pyExport-release.cmake\n'}
+[20.851213] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/cmake/rosidl_cmake-extras.cmake\n'}
+[20.851255] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[20.851297] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[20.851342] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[20.851384] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[20.851426] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[20.851471] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[20.851516] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/cmake/auto_aimConfig.cmake\n'}
+[20.851555] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/cmake/auto_aimConfig-version.cmake\n'}
+[20.851598] (auto_aim) StdoutLine: {'line': b'-- Installing: /home/dyj/rm2026/transistor_rm2026_algorithm_visual_ws/install/auto_aim/share/auto_aim/package.xml\n'}
+[20.852968] (auto_aim) CommandEnded: {'returncode': 0}
+[20.862695] (auto_aim) JobEnded: {'identifier': 'auto_aim', 'rc': 0}
+[20.863124] (-) EventReactorShutdown: {}
