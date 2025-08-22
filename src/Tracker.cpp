@@ -4,56 +4,67 @@
 Tracker::Tracker(double dt, MotionModelType model)
     : dt_(dt), model_(model)
 {
-    // 1) 初始协方差矩阵 P0（按状态分量精细化）
-    EKF_t::MatrixXX P0 = EKF_t::MatrixXX::Zero();
-    // 建议值，可按项目实际修改（单位：位置 m，速度 m/s，角度 rad，角速度 rad/s）
-    const double s_pos_xy = 5.0;   // xy 初始位置不确定性
-    const double s_pos_z  = 5.0;   // z 初始位置不确定性
-    const double s_vel_xy = 10.0;  // xy 初始速度不确定性
-    const double s_vel_z  = 5.0;   // z 初始速度不确定性
-    const double s_yaw    = 0.1;   // yaw 初始不确定性
-    const double s_yaw_d  = 0.2;   // yaw_rate 初始不确定性
+    // 1) 改进的初始协方差矩阵 P0
+    // 状态: [x, vx, y, vy, z, vz, yaw, vyaw]
+    Eigen::DiagonalMatrix<double, N_x> p0;
+    p0.setIdentity();
+    p0.diagonal() << 10.0, 5.0,   // x, vx: 位置不确定性大，速度中等
+                     10.0, 5.0,   // y, vy
+                     10.0, 5.0,   // z, vz
+                     1.0, 1.0;    // yaw, vyaw: 初始角度和角速度较为确定
+    EKF_t::MatrixXX P0 = p0.toDenseMatrix();
 
-    P0(0,0) = s_pos_xy * s_pos_xy;   // x
-    P0(2,2) = s_pos_xy * s_pos_xy;   // y
-    P0(4,4) = s_pos_z  * s_pos_z;    // z
-    P0(1,1) = s_vel_xy * s_vel_xy;   // vx
-    P0(3,3) = s_vel_xy * s_vel_xy;   // vy
-    P0(5,5) = s_vel_z  * s_vel_z;    // vz
-    P0(6,6) = s_yaw    * s_yaw;      // yaw
-    P0(7,7) = s_yaw_d  * s_yaw_d;    // yaw_rate
 
-    // 2) 定义 Q 更新函数（WNA 离散化，按轴分块）
+    // 2) 改进的 Q 更新函数 (过程噪声)
+    // 采用“积分噪声传播法”，考虑位移和速度间的耦合
     EKF_t::UpdateQFunc updateQ = [this]() {
-        EKF_t::MatrixXX Q = EKF_t::MatrixXX::Zero();
+        EKF_t::MatrixXX q;
+        q.setZero();
 
-        auto Q2 = [this](double sigma_a) {
-            Eigen::Matrix2d M;
-            const double dt  = this->dt_;
-            const double dt2 = dt * dt;
-            const double dt3 = dt2 * dt;
-            const double dt4 = dt2 * dt2;
-            M << dt4/4.0, dt3/2.0,
-                 dt3/2.0, dt2;
-            return (sigma_a * sigma_a) * M;
-        };
+        double t = this->dt_;
+        double t2 = t * t;
+        double t3 = t2 * t;
+        double t4 = t3 * t;
 
-        // x: (0,1), y: (2,3), z: (4,5), yaw: (6,7)
-        Q.block<2,2>(0,0) = Q2(noise_.sigma_acc_x);
-        Q.block<2,2>(2,2) = Q2(noise_.sigma_acc_y);
-        Q.block<2,2>(4,4) = Q2(noise_.sigma_acc_z);
-        Q.block<2,2>(6,6) = Q2(noise_.sigma_acc_yaw);
-        return Q;
+        double s2qx = noise_.sigma2_q_x;
+        double s2qy = noise_.sigma2_q_y;
+        double s2qz = noise_.sigma2_q_z;
+        double s2qyaw = noise_.sigma2_q_yaw;
+
+        // --- x ---
+        q(0,0) = t4/4 * s2qx; q(0,1) = t3/2 * s2qx;
+        q(1,0) = t3/2 * s2qx; q(1,1) = t2   * s2qx;
+
+        // --- y ---
+        q(2,2) = t4/4 * s2qy; q(2,3) = t3/2 * s2qy;
+        q(3,2) = t3/2 * s2qy; q(3,3) = t2   * s2qy;
+
+        // --- z ---
+        q(4,4) = t4/4 * s2qz; q(4,5) = t3/2 * s2qz;
+        q(5,4) = t3/2 * s2qz; q(5,5) = t2   * s2qz;
+
+        // -- yaw --
+        q(6,6) = t4/4 * s2qyaw; q(6,7) = t3/2 * s2qyaw;
+        q(7,6) = t3/2 * s2qyaw; q(7,7) = t2   * s2qyaw;
+
+        return q;
     };
 
-    // 3) 定义 R 更新函数（各向异性测量噪声）
-    EKF_t::UpdateRFunc updateR = [this](const EKF_t::MatrixZ1 & /*z*/) {
-        EKF_t::MatrixZZ R = EKF_t::MatrixZZ::Zero();
-        R(0,0) = noise_.sigma_meas_x   * noise_.sigma_meas_x;
-        R(1,1) = noise_.sigma_meas_y   * noise_.sigma_meas_y;
-        R(2,2) = noise_.sigma_meas_z   * noise_.sigma_meas_z;
-        R(3,3) = noise_.sigma_meas_yaw * noise_.sigma_meas_yaw;
-        return R;
+    // 3) 改进的 R 更新函数 (测量噪声)
+    // 噪声与测量值相关，更符合相机模型
+    EKF_t::UpdateRFunc updateR = [this](const EKF_t::MatrixZ1 &z) {
+        EKF_t::MatrixZZ r;
+        r.setZero();
+        // 测量: [x, y, z, yaw]
+        double r_x_val = noise_.r_x * std::max(1.0, std::abs(z[0]));
+        double r_y_val = noise_.r_y * std::max(1.0, std::abs(z[1]));
+        double r_z_val = noise_.r_z * std::max(1.0, std::abs(z[2]));
+        
+        r(0,0) = r_x_val;
+        r(1,1) = r_y_val;
+        r(2,2) = r_z_val;
+        r(3,3) = noise_.r_yaw; // yaw 噪声保持固定
+        return r;
     };
 
     // 4) 构建 EKF
@@ -73,7 +84,7 @@ void Tracker::init(const EKF_t::MatrixX1 &x0) {
 
 EKF_t::MatrixX1 Tracker::predict() {
     state_ = ekf_->predict();
-    // 可选：保证角度归一化
+    // 保证角度在 [-pi, pi] 范围内
     state_[6] = wrapAngle(state_[6]);
     return state_;
 }

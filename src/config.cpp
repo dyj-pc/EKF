@@ -34,25 +34,28 @@ bool Config::load(const std::string& path) {
         params_.motion_model = stringToMotionModel(config["simulation"]["motion_model"].as<std::string>());
         
         // 追踪器 - 初始状态
+        const auto& initialStateNode = config["tracker"]["initial_state"];
         params_.initial_state = EKF_t::MatrixX1::Zero();
-        params_.initial_state[0] = config["tracker"]["initial_state"]["x"].as<double>();
-        params_.initial_state[2] = config["tracker"]["initial_state"]["y"].as<double>();
-        params_.initial_state[4] = config["tracker"]["initial_state"]["z"].as<double>();
-        params_.initial_state[6] = config["tracker"]["initial_state"]["yaw"].as<double>();
+        params_.initial_state << initialStateNode[0].as<double>(), initialStateNode[1].as<double>(),
+                                 initialStateNode[2].as<double>(), initialStateNode[3].as<double>(),
+                                 initialStateNode[4].as<double>(), initialStateNode[5].as<double>(),
+                                 initialStateNode[6].as<double>(), initialStateNode[7].as<double>();
         
         // 追踪器 - 前视预测
         params_.lookahead_time = config["tracker"]["lookahead_time"].as<double>();
         
-        // 追踪器 - 噪声参数
-        params_.noise_params.sigma_acc_x = config["tracker"]["process_noise"]["sigma_acc_x"].as<double>();
-        params_.noise_params.sigma_acc_y = config["tracker"]["process_noise"]["sigma_acc_y"].as<double>();
-        params_.noise_params.sigma_acc_z = config["tracker"]["process_noise"]["sigma_acc_z"].as<double>();
-        params_.noise_params.sigma_acc_yaw = config["tracker"]["process_noise"]["sigma_acc_yaw"].as<double>();
+        // 追踪器 - 改进后的噪声参数
+        const auto& processNoiseNode = config["tracker"]["process_noise"];
+        params_.noise_params.sigma2_q_x = processNoiseNode["sigma2_q_x"].as<double>();
+        params_.noise_params.sigma2_q_y = processNoiseNode["sigma2_q_y"].as<double>();
+        params_.noise_params.sigma2_q_z = processNoiseNode["sigma2_q_z"].as<double>();
+        params_.noise_params.sigma2_q_yaw = processNoiseNode["sigma2_q_yaw"].as<double>();
         
-        params_.noise_params.sigma_meas_x = config["tracker"]["measurement_noise"]["sigma_meas_x"].as<double>();
-        params_.noise_params.sigma_meas_y = config["tracker"]["measurement_noise"]["sigma_meas_y"].as<double>();
-        params_.noise_params.sigma_meas_z = config["tracker"]["measurement_noise"]["sigma_meas_z"].as<double>();
-        params_.noise_params.sigma_meas_yaw = config["tracker"]["measurement_noise"]["sigma_meas_yaw"].as<double>();
+        const auto& measurementNoiseNode = config["tracker"]["measurement_noise"];
+        params_.noise_params.r_x = measurementNoiseNode["r_x"].as<double>();
+        params_.noise_params.r_y = measurementNoiseNode["r_y"].as<double>();
+        params_.noise_params.r_z = measurementNoiseNode["r_z"].as<double>();
+        params_.noise_params.r_yaw = measurementNoiseNode["r_yaw"].as<double>();
 
         // 输出路径
         std::string base_dir = config["output"]["base_dir"].as<std::string>();

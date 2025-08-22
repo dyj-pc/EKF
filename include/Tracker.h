@@ -5,18 +5,19 @@
 #include <cmath>
 #include "motion_model.hpp"   // 包含 Predict / Measure / EKF_t 定义
 
+// 改进后的噪声参数结构体
 struct NoiseParams {
-    // 连续域“白噪声加速度”标准差（单位：m/s^2）与“白噪声角加速度”标准差（rad/s^2）
-    double sigma_acc_x   = 2.0;   // x 轴加速度噪声
-    double sigma_acc_y   = 2.0;   // y 轴加速度噪声
-    double sigma_acc_z   = 1.0;   // z 轴加速度噪声
-    double sigma_acc_yaw = 0.2;   // yaw 角加速度噪声
+    // 过程噪声 Q 的参数 (连续时间白噪声谱密度)
+    double sigma2_q_x   = 25.0;  // (m/s^2)^2
+    double sigma2_q_y   = 25.0;  // (m/s^2)^2
+    double sigma2_q_z   = 10.0;  // (m/s^2)^2
+    double sigma2_q_yaw = 1.0;   // (rad/s^2)^2
 
-    // 测量噪声标准差（单位：m / rad）
-    double sigma_meas_x   = 5.0;
-    double sigma_meas_y   = 5.0;
-    double sigma_meas_z   = 5.0;
-    double sigma_meas_yaw = 0.05; // 与 test.cpp 中的噪声水平相符（约 0.05 rad）
+    // 测量噪声 R 的参数
+    double r_x   = 0.005; // 观测噪声系数 x
+    double r_y   = 0.005; // 观测噪声系数 y
+    double r_z   = 0.005; // 观测噪声系数 z
+    double r_yaw = 0.0025; // 观测噪声方差 yaw (rad^2)
 };
 
 class Tracker {

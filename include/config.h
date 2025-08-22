@@ -1,3 +1,4 @@
+
 #pragma once
 
 #include <string>
@@ -16,7 +17,9 @@ struct AppConfig {
     EKF_t::MatrixX1 initial_state;
     double lookahead_time;
     NoiseParams noise_params;
-
+    
+    
+    
     // 输出路径
     std::string csv_dir;
     std::string plot_dir;

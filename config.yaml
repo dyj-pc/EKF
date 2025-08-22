@@ -7,29 +7,26 @@ simulation:
 # EKF 追踪器参数
 tracker:
   # 初始状态向量: [x, vx, y, vy, z, vz, yaw, yaw_rate]
-  # 通常将 vx, vy, vz, yaw_rate 初始化为 0
-  initial_state:
-    x: 200.0
-    y: 500.0
-    z: 100.0
-    yaw: 5.0
+  initial_state: [210, 10, 500, 20, 100, 5, 0.5, 0.1]
 
   # 前视预测时间 (秒), 用于补偿系统延迟
-  lookahead_time: 1 # 例如, 2 * dt
+  lookahead_time: 0.5 # 例如, 2 * dt
 
-  # 过程噪声 sigmas (标准差)
+  # 过程噪声: 基于“积分白噪声”模型，这里是连续时间白噪声的谱密度
   process_noise:
-    sigma_acc_x: 2.0
-    sigma_acc_y: 2.0
-    sigma_acc_z: 1.0
-    sigma_acc_yaw: 0.2
-
-  # 测量噪声 sigmas (标准差)
+    sigma2_q_x: 5   # x向加速度白噪声的方差 (m/s^2)^2
+    sigma2_q_y: 5
+    sigma2_q_z: 0.05
+    sigma2_q_yaw: 10.0  
+  
+  # 测量噪声: R 矩阵的构建参数
   measurement_noise:
-    sigma_meas_x: 5.0
-    sigma_meas_y: 5.0
-    sigma_meas_z: 5.0
-    sigma_meas_yaw: 0.5
+    # R_diag = [r_x * |z_x|, r_y * |z_y|, r_z * |z_z|, r_yaw]
+    r_x: 4e-4      # x 测量噪声系数 (与距离成正比)
+    r_y: 4e-4
+    r_z: 9e-4
+    r_yaw: 5e-5   # yaw 测量噪声的固定方差 (rad^2)
+
 
 # 输出设置
 output:
