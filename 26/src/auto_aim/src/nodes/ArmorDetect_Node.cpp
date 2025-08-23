@@ -34,7 +34,7 @@
 namespace fs = std::filesystem;
 
 
-//#define USE_VIDEO // 定义后使用视频而不是摄像头作为输入
+#define USE_VIDEO // 定义后使用视频而不是摄像头作为输入
 //#define USE_IMAGES // 定义后使用图片而不是摄像头作为输入
 //#define SAVE_IMG_FREQ 30 // 定义后将每n帧保存一次相机图片
 
@@ -127,22 +127,42 @@ public:
 
         frame_rate_ = (*config_file_ptr)["frame_rate"].as<float>();
 
-        // EKF from config 
+         //从 config.yaml 初始化 EKF 和 Tracker
         ekf_dt_ = 1.0 / std::max(1.0f, frame_rate_);
-        tracker_ = std::make_unique<Tracker>(ekf_dt_, MotionModelType::CONSTANT_VEL_ROT);
 
-        // 噪声参数从 config.yaml 读取
+        // 1. 读取 EKF 参数节点
+        YAML::Node ekf_config = (*config_file_ptr)["ekf_params"];
+
+        // 2. 读取并设置运动模型
+        std::string model_str = ekf_config["motion_model"].as<std::string>();
+        MotionModelType model_type = MotionModelType::CONSTANT_VEL_ROT; // 默认值
+        if (model_str == "CONSTANT_VELOCITY") {
+            model_type = MotionModelType::CONSTANT_VELOCITY;
+        } else if (model_str == "CONSTANT_ROTATION") {
+            model_type = MotionModelType::CONSTANT_ROTATION;
+        } else if (model_str == "CONSTANT_VEL_ROT") {
+            model_type = MotionModelType::CONSTANT_VEL_ROT;
+        }
+        RCLCPP_INFO(this->get_logger(), "EKF Motion Model selected: %s", model_str.c_str());
+
+        // 3. 读取 P0 初始协方差
+        std::vector<double> p0_diag = ekf_config["p0_diagonal"].as<std::vector<double>>();
+
+        // 4. 初始化 Tracker
+        tracker_ = std::make_unique<Tracker>(ekf_dt_, model_type, p0_diag);
+
+        // 5. 读取并设置噪声参数
         ekf_noise_ = tracker_->getNoiseParams();
-        ekf_noise_.sigma2_q_x   = (*config_file_ptr)["ekf_sigma_acc_x"].as<double>();
-        ekf_noise_.sigma2_q_y   = (*config_file_ptr)["ekf_sigma_acc_y"].as<double>();
-        ekf_noise_.sigma2_q_z   = (*config_file_ptr)["ekf_sigma_acc_z"].as<double>();
-        ekf_noise_.sigma2_q_yaw = (*config_file_ptr)["ekf_sigma_acc_yaw"].as<double>();
-        ekf_noise_.r_x  = (*config_file_ptr)["ekf_sigma_meas_x"].as<double>();
-        ekf_noise_.r_y   = (*config_file_ptr)["ekf_sigma_meas_y"].as<double>();
-        ekf_noise_.r_z   = (*config_file_ptr)["ekf_sigma_meas_z"].as<double>();
-        ekf_noise_.r_yaw = (*config_file_ptr)["ekf_sigma_meas_yaw"].as<double>();
-
+        ekf_noise_.sigma2_q_x   = ekf_config["sigma2_q_x"].as<double>();
+        ekf_noise_.sigma2_q_y   = ekf_config["sigma2_q_y"].as<double>();
+        ekf_noise_.sigma2_q_z   = ekf_config["sigma2_q_z"].as<double>();
+        ekf_noise_.sigma2_q_yaw = ekf_config["sigma2_q_yaw"].as<double>();
+        ekf_noise_.r_x  = ekf_config["r_x"].as<double>();
+        ekf_noise_.r_y   = ekf_config["r_y"].as<double>();
+        ekf_noise_.r_z   = ekf_config["r_z"].as<double>();
+        ekf_noise_.r_yaw = ekf_config["r_yaw"].as<double>();
         tracker_->setNoiseParams(ekf_noise_);
+        // EKF 初始化结束
 
         // yaw 接口预留（当前无来源时默认 false）
         yaw_avail_ = false;
@@ -501,13 +521,18 @@ private:
                         );
                         double predicted_yaw = x_future[6]; // 预留：若后续需要 yaw 控制
 
-                        // cv::Point3f predicted_pos = trans_pred_->trans2DPredTo3D(best_result, aim.position, classifyResults_forFourierPredict,
+                        RCLCPP_INFO(this->get_logger(), "EKF Target %d:", best_result.number);
+                        RCLCPP_INFO(this->get_logger(), "  Meas[%.2f, %.2f, %.2f]", 
+                                    aim.position.x, aim.position.y, aim.position.z);
+                        RCLCPP_INFO(this->get_logger(), "  Pred[%.2f, %.2f, %.2f]", 
+                                    predicted_pos.x, predicted_pos.y, predicted_pos.z);
+                        RCLCPP_INFO(this->get_logger(), "  Diff=%.2f, Delay=%.3f s", 
+                                    pos_diff, total_delay);
+
+                        //cv::Point3f predicted_pos = trans_pred_->trans2DPredTo3D(best_result, aim.position, classifyResults_forFourierPredict,
                         //                                                          total_delay, fps_counter->fps());
                         // ========== EKF 替换结束 ==========
 
-                        //cv::Point3f predicted_pos = trans_pred_->trans2DPredTo3D(best_result, aim.position, classifyResults_forFourierPredict,
-                        //                                                         total_delay, fps_counter->fps());
-                        
                         // 弹道解算
                         BallisticInfo ballistic_result = calcBallisticAngle(
                             predicted_pos.x, 

@@ -22,7 +22,7 @@ struct NoiseParams {
 
 class Tracker {
 public:
-    explicit Tracker(double dt, MotionModelType model = MotionModelType::CONSTANT_VELOCITY);
+    explicit Tracker(double dt, MotionModelType model, const std::vector<double>& p0_diag);
 
     void init(const EKF_t::MatrixX1 &x0);
 

@@ -1,19 +1,21 @@
 #include "armor_detector/Tracker.h"
 #include <Eigen/Dense>
+#include <iostream> // 用于打印错误信息
 
-Tracker::Tracker(double dt, MotionModelType model)
+Tracker::Tracker(double dt, MotionModelType model, const std::vector<double>& p0_diag)
     : dt_(dt), model_(model)
 {
-    // 1) 改进的初始协方差矩阵 P0
-    // 状态: [x, vx, y, vy, z, vz, yaw, vyaw]
-    Eigen::DiagonalMatrix<double, N_x> p0;
-    p0.setIdentity();
-    p0.diagonal() << 10.0, 5.0,   // x, vx: 位置不确定性大，速度中等
-                     10.0, 5.0,   // y, vy
-                     10.0, 5.0,   // z, vz
-                     1.0, 1.0;    // yaw, vyaw: 初始角度和角速度较为确定
-    EKF_t::MatrixXX P0 = p0.toDenseMatrix();
-
+    // 1) 从传入的向量动态构建初始协方差矩阵 P0
+    EKF_t::MatrixXX P0 = EKF_t::MatrixXX::Identity(); // 默认值
+    if (p0_diag.size() == N_x) {
+        Eigen::DiagonalMatrix<double, N_x> p_diag;
+        p_diag.diagonal() = Eigen::Map<const Eigen::Matrix<double, N_x, 1>>(p0_diag.data());
+        P0 = p_diag.toDenseMatrix();
+    } else {
+        // 如果YAML配置中的p0_diagonal尺寸不正确，打印错误并使用单位矩阵
+        std::cerr << "[Tracker ERROR] p0_diagonal size is " << p0_diag.size() 
+                  << ", but should be " << N_x << ". Using Identity matrix as P0." << std::endl;
+    }
 
     // 2) 改进的 Q 更新函数 (过程噪声)
     // 采用“积分噪声传播法”，考虑位移和速度间的耦合

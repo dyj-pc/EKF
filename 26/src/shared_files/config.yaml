@@ -1,13 +1,22 @@
-# EKF 过程噪声参数（连续时间加速度标准差）
-sigma2_q_x: 1000   # x向加速度白噪声的方差 (m/s^2)^2
-sigma2_q_y: 0.05
-sigma2_q_z: 0.05
-sigma2_q_yaw: 50.0  
+ekf_params:
+  motion_model: "CONSTANT_VEL_ROT"
+  p0_diagonal: [10.0, 5.0, 10.0, 5.0, 10.0, 5.0, 1.0, 1.0]
 
-r_x: 4e-4      # x 测量噪声系数 (与距离成正比)
-r_y: 4e-4
-r_z: 9e-4
-r_yaw: 5e-3
+  # 过程噪声 Q (旋转比平移更剧烈)
+  # 大幅提高yaw轴的过程噪声，使其是平移噪声的4-5倍
+  sigma2_q_x: 25.0      # 允许较快的左右机动响应
+  sigma2_q_y: 25.0      # 允许较快的上下机动响应
+  sigma2_q_z: 5.0       # 保持较小值，因为前后移动通常较平缓
+  sigma2_q_yaw: 120.0     # (核心修改) 显著提高，以灵活应对剧烈转向
+
+  # 测量噪声 R （对测量值保持合理怀疑）
+  # 大幅提高测量噪声，以增强滤波器稳定性，防止发散
+  r_x: 0.05        # (核心修改) 从4e-4大幅提高，降低对x坐标测量的信任度
+  r_y: 0.05        # (核心修改) 从4e-4大幅提高，降低对y坐标测量的信任度
+  r_z: 0.1         # (核心修改) 从9e-4大幅提高，深度测量通常更不准，给更高噪声
+  r_yaw: 0.02      # (核心修改) 参考开源项目的值，适度提高
+
+RESET_DISTANCE_THRESHOLD : 400.0 # 单位：mm
 
 # SharedMemoryTorch参数
 SHM_KEY : 0x1234
@@ -15,7 +24,7 @@ SHM_KEY : 0x1234
 # ArmorDetect_Node 参数
 model_relative_path : "src/shared_files/models/model_rm2026.pt"
 enemy_color : "BLUE"
-RESET_DISTANCE_THRESHOLD : 400.0 # 单位：mm
+
 MAX_LOST_TIME : 0.5              # 单位：秒
 camera_ExposureTime : 2000.0  # 5000.0
 camera_Gain : 16.0            # 16.0
