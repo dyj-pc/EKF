@@ -14,18 +14,18 @@ tracker:
 
   # 过程噪声: 连续时间白噪声的谱密度
   process_noise:
-    sigma2_q_x: 10000   # x向加速度白噪声的方差 (m/s^2)^2
-    sigma2_q_y: 5
-    sigma2_q_z: 0.05
+    sigma2_q_x: 5.0   # x向加速度白噪声的方差 (m/s^2)^2
+    sigma2_q_y: 5.0
+    sigma2_q_z: 5.0
     sigma2_q_yaw: 50.0  
   
   # 测量噪声 R 矩阵的构建参数
   measurement_noise:
     # R_diag = [r_x * |z_x|, r_y * |z_y|, r_z * |z_z|, r_yaw]
-    r_x: 4e-12      # x 测量噪声系数 (与距离成正比)
+    r_x: 4e-4      # x 测量噪声系数 (与距离成正比)
     r_y: 4e-4
-    r_z: 9e-4
-    r_yaw: 5e-3   # yaw 测量噪声的固定方差 (rad^2)
+    r_z: 4e-4
+    r_yaw: 4e-3   # yaw 测量噪声的固定方差 (rad^2)
 
 
 # 输出设置
