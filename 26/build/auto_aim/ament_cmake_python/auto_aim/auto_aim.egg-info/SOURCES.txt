@@ -1,9 +1,0 @@
-setup.py
-auto_aim/__init__.py
-auto_aim.egg-info/PKG-INFO
-auto_aim.egg-info/SOURCES.txt
-auto_aim.egg-info/dependency_links.txt
-auto_aim.egg-info/top_level.txt
-auto_aim/msg/__init__.py
-auto_aim/msg/_gimbal_command.py
-auto_aim/msg/_serial_data.py

@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -Ofast -DNDEBUG -flto -march=native -shared -Wl,-soname,libcrc_lib.so -o libcrc_lib.so CMakeFiles/crc_lib.dir/src/nodes/CRC.cpp.o
