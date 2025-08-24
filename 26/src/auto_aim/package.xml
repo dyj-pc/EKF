@@ -28,6 +28,7 @@
   <exec_depend>sensor_msgs</exec_depend>
   <exec_depend>rosidl_default_runtime</exec_depend>
   <exec_depend>libyaml_cpp_dev</exec_depend>
+  <depend>angles</depend> <test_depend>ament_lint_auto</test_depend>
 
   <!-- 消息接口包组 -->
   <member_of_group>rosidl_interface_packages</member_of_group>

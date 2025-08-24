@@ -1,6 +1,7 @@
 // ArmorSolver.h
 #ifndef ARMOR_SOLVER_H
 #define ARMOR_SOLVER_H
+#include <Eigen/Dense>
 
 #include <opencv2/opencv.hpp>
 #include "LightBar.h"
@@ -9,6 +10,9 @@
 #include <yaml-cpp/yaml.h>
 #define _USE_MATH_DEFINES // 启用数学常量
 #include <cmath>
+#include <opencv2/core/eigen.hpp> // 用于Eigen转换
+
+#include "rclcpp/rclcpp.hpp"
 
 class ArmorSolver {
 public:
@@ -21,6 +25,7 @@ public:
     // 新增3D到像素坐标投影函数
     cv::Point2f project3DToPixel(const cv::Point3f& world_point) const;
     AimResult solveArmor(const ArmorResult& armor_result) const; // 增加number参数
+    static double getYawFromRvec(const cv::Mat& rvec);
 private:
     // 相机参数
     cv::Mat camera_matrix;

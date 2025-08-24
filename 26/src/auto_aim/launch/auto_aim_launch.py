@@ -17,6 +17,7 @@ def generate_launch_description():
             package='auto_aim',
             executable='armor_detect_node',
             name='armor_detect_node',
+            output='screen',  # <--- 加上这一行
             #arguments = ['--ros-args', '--log-level', 'DEBUG']
         ),
         Node(

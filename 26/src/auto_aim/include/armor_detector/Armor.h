@@ -29,6 +29,9 @@ struct AimResult {
     cv::Point3f position;  // 装甲板中心在相机坐标系下的位置
     double distance;       // 距离
     bool valid;           // 解算是否有效
+    // 在AimResult结构体中，将原来的yaw成员的类型从float改为double，并添加rvec
+    double yaw;           // 装甲板Yaw角
+    cv::Mat rvec;        // 装甲板旋转向量
 };
 
 struct Armor {

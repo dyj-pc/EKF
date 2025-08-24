@@ -4,6 +4,12 @@
 #include<Eigen/Dense>
 // ceres
 #include <ceres/jet.h>
+
+// --- 新增头文件 ---
+#include "rclcpp/rclcpp.hpp"
+#include <sstream>
+// --- 新增头文件结束 ---
+
 /*
 扩展卡尔曼滤波器 (EKF)
 */
@@ -47,7 +53,7 @@ public:
   // 设置测量模型的函数
   void setMeasureFunc(const MeasureFunc &h) noexcept { this->h = h; }
 
-  // ---------- predict()（使用 block<1, N_x> 模板化写法，注意 template 关键字） ----------
+  // 
 MatrixX1 predict() noexcept {
     ceres::Jet<double, N_x> x_e_jet[N_x];
     for (int i = 0; i < N_x; ++i) {
@@ -71,8 +77,8 @@ MatrixX1 predict() noexcept {
 
     return x_pri;
 }
-
-// ---------- update(const MatrixZ1 &z)（使用 block<1, N_x> 模板化写法） ----------
+MatrixX1 getState() const noexcept { return x_post; }
+//
 MatrixX1 update(const MatrixZ1 &z) noexcept {
     ceres::Jet<double, N_x> x_p_jet[N_x];
     for (int i = 0; i < N_x; i++) {
@@ -89,9 +95,44 @@ MatrixX1 update(const MatrixZ1 &z) noexcept {
     }
 
     R = update_R(z);
+    // ======================= 新增的ROS2日志调试代码 START =======================
+    // 获取一个全局的logger实例来进行打印
+    auto logger = rclcpp::get_logger("ekf_debug_logger");
+
+    // 创建一个字符串流来格式化矩阵
+    std::stringstream ss_p, ss_h, ss_r, ss_s;
+
+    ss_p << P_pri;
+    RCLCPP_INFO(logger, "----------- EKF DEBUG INFO (Pre-Inverse) -----------");
+    RCLCPP_INFO(logger, "P_pri (Predicted Covariance):\n%s", ss_p.str().c_str());
+
+    ss_h << H;
+    RCLCPP_INFO(logger, "H (Measurement Jacobian):\n%s", ss_h.str().c_str());
+
+    ss_r << R;
+    RCLCPP_INFO(logger, "R (Measurement Noise):\n%s", ss_r.str().c_str());
+
+    // 计算并打印即将被求逆的矩阵 S
+    MatrixZZ S = H * P_pri * H.transpose() + R;
+    ss_s << S;
+    RCLCPP_INFO(logger, "S (Matrix to be inverted):\n%s", ss_s.str().c_str());
+
+    // 计算并打印 S 的行列式
+    double detS = S.determinant();
+    RCLCPP_INFO(logger, "Determinant of S: %e", detS); // 使用 %e 科学计数法打印
+    
+    if (std::abs(detS) < 1e-9) {
+        RCLCPP_ERROR(logger, "CRITICAL: Determinant is close to zero! Matrix inversion will fail.");
+    }
+    RCLCPP_INFO(logger, "----------------------------------------------------");
+    // ======================= 新增的ROS2日志调试代码 END =======================
+
+    
+    // 计算卡尔曼增益
     K = P_pri * H.transpose() * (H * P_pri * H.transpose() + R).inverse();
     x_post = x_post + K * (z - z_pri);
     P_post = (MatrixXX::Identity() - K * H) * P_pri;
+    
     return x_post;
   }
 
