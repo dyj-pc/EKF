@@ -10,6 +10,7 @@
 
 #include "armor_detector/Tracker.h"
 #include <angles/angles.h>
+#include <fstream>
 
 //#include "auto_aim/msg/serial_data.hpp"
 //#include "auto_aim/msg/gimbal_command.hpp"
@@ -74,6 +75,17 @@ public:
         const std::string config_file_relatvie_path = "src/shared_files/config.yaml";
         fs::path config_file_path = ws_dir_path / config_file_relatvie_path;  // 使用文件系统的路径拼接
 
+        // *** 新增: 初始化数据记录文件 ***
+        fs::path log_file_path = ws_dir_path / "armor_data_log.csv";
+        data_log_file_.open(log_file_path.string());
+        if (data_log_file_.is_open()) {
+            data_log_file_ << "frame,x,y,z,yaw\n"; // 写入CSV表头
+            RCLCPP_INFO(this->get_logger(), "Logging armor data to: %s", log_file_path.string().c_str());
+        } else {
+            RCLCPP_ERROR(this->get_logger(), "Failed to open data log file: %s", log_file_path.string().c_str());
+        }
+        // *** 新增结束 ***
+
         // 加载配置文件
         config_file_ptr = std::make_shared<YAML::Node>(YAML::LoadFile(config_file_path));
 
@@ -127,11 +139,11 @@ public:
         params_.MAX_LOST_CNT = (*config_file_ptr)["MAX_LOST_CNT"].as<int>();
         
         frame_rate_ = (*config_file_ptr)["frame_rate"].as<float>();
-        // ========== 新的 EKF 和 Tracker 初始化 ==========
+        // 新的 EKF 和 Tracker 初始化
         double dt = 1.0 / std::max(1.0f, frame_rate_);
         tracker_ = std::make_unique<Tracker>(dt);
         RCLCPP_INFO(this->get_logger(), "New 10D EKF Tracker initialized with dt=%.4f", dt);
-        // ========== 初始化结束 ==========
+        // 初始化结束
 
 
 #ifdef USE_VIDEO
@@ -187,6 +199,11 @@ public:
     }
 
     ~ArmorDetectNode() {
+        // *** 新增: 关闭文件流 ***
+        if (data_log_file_.is_open()) {
+            data_log_file_.close();
+        }
+        // 新增结束
         serial_communication_->~SerialCommunicationClass();
         cv::destroyAllWindows();
         pthread_mutex_destroy(&g_mutex);
@@ -369,7 +386,7 @@ private:
             }
 #endif
 
-            //cv::flip(frame, frame, -1);  // 翻转图像（上下翻转）
+        // cv::flip(frame, frame, -1);  // 翻转图像（上下翻转）
 
             std::vector<Light> lights;
             std::vector<Armor> armors;
@@ -417,12 +434,22 @@ private:
                     auto best_result = *it;
                     AimResult aim = armor_solver_->solveArmor(best_result);
                     if (aim.valid) {
+                        // *** 新增: 将解算数据写入文件 ***
+                        if (data_log_file_.is_open()) {
+                            data_log_file_ << frame_count_ << ","
+                                           << aim.position.x << ","
+                                           << aim.position.y << ","
+                                           << aim.position.z << ","
+                                           << aim.yaw << "\n";
+                        }
+                        // *** 新增结束 ***
+                        
                         // 安全网 #2: 连续化Yaw角处理
                         double continuous_yaw = last_continuous_yaw_ + angles::shortest_angular_distance(last_continuous_yaw_, aim.yaw);
                         last_continuous_yaw_ = continuous_yaw;
                         
 
-                        // ========== EKF REFACTORED LOGIC START ==========
+                        // EKF REFACTORED LOGIC START
 
                         // 1. 构造4维测量向量 z = [xa, ya, za, yaw_a]
                         Tracker::Measurement z;
@@ -596,6 +623,12 @@ private:
     // EKF/Tracker 相关新增成员
     std::unique_ptr<Tracker> tracker_;
     double last_continuous_yaw_ = 0.0; // 用于连续化yaw角
+    
+    // *** 修改: 将 frame_count_ 移至此处并移除条件编译 ***
+    long long frame_count_ = 0;
+
+    // *** 新增: 文件输出流对象 ***
+    std::ofstream data_log_file_;
 
     // 帧率计算器
     std::shared_ptr<FrameRateCounter> fps_counter;

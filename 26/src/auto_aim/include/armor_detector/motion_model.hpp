@@ -47,8 +47,8 @@ struct Measure {
         T xc = x_in[0], yc = x_in[1], zc = x_in[4];
         T yaw = x_in[6], r = x_in[8], d_zc = x_in[9];
         z_out[0] = xc - r * ceres::cos(yaw); // xa = xc - r*cos(yaw)
-        z_out[1] = yc - r * ceres::sin(yaw); // ya = yc - r*sin(yaw)
-        z_out[2] = zc + d_zc;                 // za = zc + d_zc
+        z_out[1] = yc ; // ya = yc + d_zc
+        z_out[2] = zc - r * ceres::sin(yaw);                 // za = zc - r*sin(yaw)
         z_out[3] = yaw;                       // yaw_a = yaw
     }
 };

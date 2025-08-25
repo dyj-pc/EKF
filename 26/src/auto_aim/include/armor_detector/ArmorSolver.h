@@ -13,7 +13,7 @@
 #include <opencv2/core/eigen.hpp> // 用于Eigen转换
 
 #include "rclcpp/rclcpp.hpp"
-
+#include <fstream> // <-- 添加文件流头文件
 class ArmorSolver {
 public:
     ArmorSolver(std::shared_ptr<YAML::Node> config_file_ptr, rclcpp::Node* node)
